@@ -1,0 +1,1390 @@
+@font-face{font-family:'Cormorant Infant';font-style:normal;font-weight:500;font-display: block;src:url('assets/fonts/cormorant-infant-medium.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Infant';font-style:italic;font-weight:500;font-display: block;src:url('assets/fonts/cormorant-infant-medium-italic.woff2') format('woff2')}
+@font-face {
+  font-family: 'Great Vibes';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('assets/fonts/great-vibes.woff2') format('woff2')
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/cormorant-regular.ttf') format('truetype')
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('assets/fonts/cormorant-bold.ttf') format('truetype')
+}
+
+@font-face {
+  font-family: 'Noto Nastaliq Urdu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('assets/fonts/noto-nastaliq-urdu.woff2') format('woff2')
+}
+
+:root {
+  --bg: #062e27;
+  --deep: #031e19;
+  --gold: #d5b777;
+  --soft: #f5ead4;
+  --muted: #c3bba5;
+  --line: #c7a96b50;
+  color-scheme: dark
+}
+
+* {
+  box-sizing: border-box
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--soft);
+  font-family: 'Cormorant Infant', Georgia, serif;
+  font-size: clamp(1.125rem, 1rem + .5vw, 1.25rem);
+  background-image: radial-gradient(ellipse at 50% 0%, #17524466, transparent 55%);font-weight:500
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent
+}
+
+button {
+  font: inherit;
+  cursor: pointer
+}
+
+a {
+  color: inherit
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--soft);
+  outline-offset: 6px
+}
+
+h1,
+h2,
+p {
+  overflow-wrap: break-word
+}
+
+h1,
+h2 {
+  font-weight: 400
+}
+
+button {
+  min-height: 44px
+}
+
+main:focus {
+  outline: none
+}
+
+[hidden] {
+  display: none !important
+}
+
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 110;
+  background: var(--deep);
+  padding: 12px;
+  transform: translateY(-150%)
+}
+
+.skip-link:focus {
+  transform: none
+}
+
+.urdu,
+[lang=ar] {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  font-weight: 400;
+  line-height: 2.8;
+  letter-spacing: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+  text-wrap: pretty
+}
+
+.urdu {
+  padding-inline: 8px
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px clamp(16px, 5vw, 72px);
+  border-bottom: 1px solid var(--line);
+  background: #05271feF;
+  backdrop-filter: blur(16px)
+}
+
+.monogram {
+  color: var(--gold);
+  font-size: 24px;
+  letter-spacing: 5px;
+  white-space: nowrap
+}
+
+.monogram i {
+  font-size: 9px;
+  font-style: normal
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 2vw, 24px)
+}
+
+nav a,
+nav button {
+  font-size: 15px;
+  text-decoration: none;
+  color: var(--gold)
+}
+
+nav a {
+  padding-block: 12px
+}
+
+nav button {
+  border: 1px solid var(--line);
+  background: transparent;
+  padding: 6px 12px;
+  border-radius: 24px
+}
+
+nav button[aria-pressed=true] {
+  background: #d5b77722
+}
+
+.eyebrow {
+  font-family: Georgia, serif;
+  font-size: 10px;
+  line-height: 2;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold)
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  text-decoration: none;
+  border: 1px solid #ebd295;
+  background: linear-gradient(110deg, #e2c687, #b79858);
+  color: #062b22;
+  padding: 13px 28px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 2px;
+  box-shadow: 0 5px 25px #0002
+}
+
+.primary:hover {
+  filter: brightness(1.1)
+}
+
+.gate {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: var(--deep);
+  perspective: 1500px;
+  isolation: isolate;
+  overflow: auto
+}
+
+.gate:after {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid var(--line);
+  pointer-events: none;
+  z-index: 2
+}
+
+.doors {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  overflow: hidden;
+  perspective: 1500px
+}
+
+.door {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  flex-shrink: 0;
+  background: repeating-linear-gradient(90deg, transparent 0 24px, #c7a56508 25px 26px), linear-gradient(100deg, #0a3a30, #0b493a 45%, #05271f);
+  border: 4px double #b5995d;
+  box-shadow: inset 0 0 70px #00160f;
+  transition: transform 2.2s cubic-bezier(.32, .02, .2, 1);
+  backface-visibility: hidden
+}
+
+.door.left {
+  transform-origin: 0 50%
+}
+
+.door.right {
+  transform-origin: 100% 50%
+}
+
+.door-panel {
+  position: absolute;
+  inset: 5% 10%;
+  border: 1px solid #b99b5a88;
+  border-radius: 50% 50% 2px 2px / 17% 17% 2px 2px;
+  box-shadow: inset 0 0 0 7px #073125, inset 0 0 0 8px #b99b5a55;
+  display: grid;
+  place-items: center;
+  background: repeating-conic-gradient(from 45deg, #c9a96809 0% 25%, transparent 0% 50%) 50% / 38px 38px
+}
+
+.door-motif {
+  font-size: clamp(90px, 20vw, 240px);
+  color: #b99b5a55
+}
+
+.door-handle {
+  position: absolute;
+  top: 58%;
+  width: 14px;
+  height: 35px;
+  border: 3px solid var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 3px 8px #0008
+}
+
+.left .door-handle {
+  right: 5%
+}
+
+.right .door-handle {
+  left: 5%
+}
+
+.gate-top {
+  position: absolute;
+  top: max(40px, 7%);
+  inset-inline: 25px;
+  text-align: center;
+  color: var(--gold);
+  font-size: clamp(17px, 3vw, 26px);
+  transition: opacity .5s
+}
+
+.gate-front {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 145px 24px 65px;
+  width: min(100%, 650px);
+  text-shadow: 0 2px 18px #001a15;
+  transition: opacity .45s, transform .6s
+}
+
+.gate-front h2 {
+  font-size: clamp(2rem, 1.2rem + 4vw, 4.1875rem);
+  line-height: 1.1;
+  margin: 25px 0
+}
+
+.gate-front h2 em {
+  display: block;
+  color: var(--gold);
+  font-size: .6em;
+  margin: 10px
+}
+
+.gate-front .urdu {
+  font-size: clamp(1.0625rem, .875rem + 1vw, 1.5625rem);
+  margin-bottom: 20px
+}
+
+.hint {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-top: 22px
+}
+
+.gate.opening .door.left {
+  transform: rotateY(-105deg)
+}
+
+.gate.opening .door.right {
+  transform: rotateY(105deg)
+}
+
+.gate.opening .gate-front {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none
+}
+
+.gate.opening .gate-top {
+  opacity: 0
+}
+
+.gate.opening {
+  background: transparent;
+  pointer-events: none
+}
+
+.gate.opening:after {
+  opacity: 0;
+  transition: opacity .5s
+}
+
+.gate-active {
+  overflow: hidden
+}
+
+.hero {
+  padding: 35px 20px 60px;
+  text-align: center;
+  position: relative
+}
+
+.arch {
+  max-width: 840px;
+  margin: auto;
+  padding: 90px clamp(22px, 6vw, 90px) 50px;
+  border: 1px solid var(--line);
+  border-radius: 50% 50% 0 0 / 160px 160px 0 0;
+  outline: 1px solid #c7a96b25;
+  outline-offset: -10px;
+  background: radial-gradient(ellipse at 50% 30%, #14534288, transparent 70%);
+  position: relative
+}
+
+.mini {
+  font-size: clamp(17px, 3vw, 23px);
+  color: var(--gold);
+  margin-bottom: 24px
+}
+
+.hero-prelude {
+  font-size: clamp(21px, 3vw, 29px);
+  font-style: italic;
+  color: var(--muted);
+  margin: 15px 0
+}
+
+.hero h1 {
+  font-size: clamp(2.25rem, 1rem + 6vw, 4.75rem);
+  line-height: 1.03;
+  margin: 20px 0;
+  letter-spacing: -1px
+}
+
+.hero h1 .ampersand {
+  display: block;
+  color: var(--gold);
+  font-size: .5em;
+  font-style: italic;
+  margin: 15px 0
+}
+
+.hero .names {
+  font-size: clamp(1.0625rem, .875rem + 1vw, 1.6875rem);
+  margin: 20px 0
+}
+
+.hero p:not(.urdu) {
+  line-height: 1.5
+}
+
+.flourish,
+.star {
+  color: var(--gold);
+  font-size: 32px
+}
+
+.date-mark {
+  display: table;
+  margin: 25px auto;
+  border-block: 1px solid var(--line);
+  padding: 14px 12px;
+  font: 11px/1.8 Georgia, serif;
+  letter-spacing: 3px;
+  color: var(--gold)
+}
+
+.scroll {
+  display: inline-block;
+  font-size: 16px;
+  color: var(--muted);
+  padding: 12px;
+  text-decoration: none
+}
+
+.intro,
+.family,
+.ending {
+  max-width: 850px;
+  text-align: center;
+  margin: auto;
+  padding: 70px 24px
+}
+
+.intro h2,
+.ending h2 {
+  font-size: clamp(1.75rem, 1.25rem + 2.5vw, 3.1875rem);
+  line-height: 1.15;
+  margin: 16px 0
+}
+
+.intro p,
+.ending p {
+  font-size: clamp(1.125rem, 1rem + .75vw, 1.4375rem);
+  line-height: 1.6
+}
+
+.intro p.urdu {
+  line-height: 2.8;
+  font-size: 19px;
+  margin-top: 22px
+}
+
+.event {
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px 24px;
+  scroll-margin-top: 20px
+}
+
+.event-card {
+  position: relative;
+  padding: 55px clamp(25px, 6vw, 90px);
+  border-block: 1px solid var(--line);
+  text-align: center;
+  background: linear-gradient(120deg, #0b3d3144, transparent)
+}
+
+.event-card:before,
+.event-card:after {
+  content: '✧';
+  position: absolute;
+  color: var(--gold);
+  top: -16px;
+  font-size: 24px;
+  background: var(--bg);
+  padding: 0 8px
+}
+
+.event-card:before {
+  left: 0
+}
+
+.event-card:after {
+  right: 0
+}
+
+.event-icon {
+  color: var(--gold);
+  font-size: 35px
+}
+
+.event h2,
+.family h2 {
+  font-size: clamp(2rem, 1.3rem + 3.5vw, 3.875rem);
+  margin: 12px 0;
+  font-weight: 400;
+  line-height: 1.15
+}
+
+.event .title-urdu {
+  font-size: 25px;
+  color: var(--gold);
+  margin: 10px 0;
+  line-height: 2.8
+}
+
+.rule {
+  width: 70px;
+  height: 1px;
+  background: var(--line);
+  margin: 26px auto
+}
+
+.day {
+  font: 11px/2 Georgia, serif;
+  letter-spacing: 4px;
+  color: var(--gold)
+}
+
+.bigdate {
+  display: block;
+  font-size: clamp(2rem, 1.2rem + 4vw, 3.6875rem);
+  margin: 10px 0;
+  line-height: 1.3
+}
+
+.bigdate small {
+  font-size: .38em;
+  letter-spacing: 2px
+}
+
+.time {
+  font-size: clamp(1.375rem, 1.125rem + 1vw, 1.6875rem);
+  color: var(--gold)
+}
+
+.venue {
+  font-size: clamp(1.125rem, 1rem + .75vw, 1.625rem);
+  line-height: 1.6
+}
+
+.venue-urdu {
+  font-size: 18px;
+  max-width: 490px;
+  margin: 15px auto 30px;
+  line-height: 2.8
+}
+
+.action {
+  margin-top: 10px
+}
+
+.separator {
+  text-align: center;
+  padding: 50px 24px;
+  color: var(--gold)
+}
+
+.separator div {
+  font-size: 23px;
+  line-height: 2.8
+}
+
+.separator p {
+  color: var(--muted);
+  font-style: italic;
+  font-size: 22px
+}
+
+.family {
+  margin-top: 55px
+}
+
+.family p {
+  font-size: clamp(1.125rem, 1rem + .75vw, 1.4375rem);
+  line-height: 1.7;
+  margin: 18px 0 0
+}
+
+.family p.urdu {
+  font-size: 18px;
+  line-height: 2.8;
+  margin: 6px 0 18px
+}
+
+.family-main {
+  color: var(--gold)
+}
+
+.ending {
+  border-top: 1px solid var(--line);
+  margin-top: 30px;
+  padding-bottom: 55px
+}
+
+.ending p.urdu {
+  line-height: 2.8
+}
+
+.large {
+  font-size: 36px;
+  margin: 30px
+}
+
+.share {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--gold);
+  padding: 12px 25px;
+  font-size: 18px
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 25px 20px;
+  border-top: 1px solid var(--line);
+  font-size: 16px
+}
+
+.status {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100% - 32px);
+  margin: 0;
+  padding: 14px 20px;
+  background: var(--soft);
+  color: var(--deep);
+  font-size: 18px;
+  box-shadow: 0 5px 30px #0006;
+  z-index: 120;
+  pointer-events: none
+}
+
+.status:empty {
+  display: none
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .4s, transform .4s
+}
+
+.js .reveal.visible {
+  opacity: 1;
+  transform: none
+}
+
+.urdu-focus .urdu {
+  color: #f0d599
+}
+
+.urdu-focus .family .urdu,
+.urdu-focus .venue-urdu,
+.urdu-focus .intro .urdu {
+  font-size: clamp(1.125rem, 1rem + .75vw, 1.375rem)
+}
+
+@media(min-width:760px) {
+  .hero {
+    padding-top: 50px
+  }
+
+  .arch {
+    padding-top: 110px
+  }
+
+  .event-card {
+    padding-block: 65px
+  }
+
+  .event {
+    max-width: 850px
+  }
+
+  .intro {
+    padding-block: 100px
+  }
+}
+
+@media(max-width:380px) {
+  .topbar {
+    padding: 8px 12px;
+    gap: 5px
+  }
+
+  .monogram {
+    font-size: 20px;
+    letter-spacing: 2px
+  }
+
+  nav {
+    gap: 8px
+  }
+
+  nav button {
+    padding-inline: 9px
+  }
+
+  nav a {
+    font-size: 14px
+  }
+
+  #music span {
+    display: none
+  }
+
+  .hero {
+    padding-inline: 12px
+  }
+
+  .arch {
+    padding-inline: 18px
+  }
+
+  .eyebrow {
+    letter-spacing: 2px
+  }
+
+  .gate-front {
+    padding-inline: 22px
+  }
+
+  .event {
+    padding-inline: 16px
+  }
+
+  .event-card {
+    padding-inline: 14px
+  }
+
+  .date-mark {
+    letter-spacing: 2px
+  }
+}
+
+@media(max-height:640px) {
+  .gate-top {
+    top: 15px;
+    font-size: 16px
+  }
+
+  .gate-front {
+    padding-top: 85px;
+    padding-bottom: 25px
+  }
+
+  .gate-front h2 {
+    font-size: clamp(1.75rem, 1.2rem + 2vw, 2.125rem);
+    margin: 12px 0
+  }
+
+  .gate-front .urdu {
+    font-size: 17px;
+    margin: 5px 0 14px
+  }
+
+  .hint {
+    margin: 12px 0
+  }
+
+  .gate-front .eyebrow {
+    font-size: 9px
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior: auto
+  }
+
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none
+  }
+}
+
+
+/* Typography follows the available section width, including phone layouts. */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%
+}
+
+.gate-front,
+.arch,
+.event-card,
+.intro,
+.family,
+.ending {
+  container-type: inline-size;
+  min-width: 0
+}
+
+.hero h1,
+.gate-front h2,
+.intro h2,
+.ending h2,
+.event h2,
+.family h2 {
+  font-family: 'Great Vibes', 'Brush Script MT', cursive;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.45;
+  text-wrap: balance;
+  padding-inline: .12em;
+}
+
+.hero h1,
+.gate-front h2 {
+  font-size: clamp(1.75rem, 11.5cqi, 4.75rem);
+  margin-block: 20px
+}
+
+.person-name {
+  display: block;
+  white-space: nowrap;
+  overflow-wrap: normal
+}
+
+.hero h1 .ampersand,
+.gate-front h2 em {
+  font-size: .55em;
+  line-height: 1.2;
+  margin: 6px 0;
+  font-style: normal
+}
+
+.intro h2,
+.ending h2 {
+  font-size: clamp(1.875rem, 9cqi, 3.5rem)
+}
+
+.event h2,
+.family h2 {
+  font-size: clamp(2rem, 11cqi, 3.875rem)
+}
+
+.hero p:not(.urdu):not(.hero-prelude),
+.intro p:not(.urdu),
+.family p:not(.urdu),
+.ending p:not(.urdu),
+.venue {
+  font-size: clamp(1.0625rem, .95rem + .7vw, 1.4375rem);
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+
+.family p:not(.urdu) {
+  font-size: clamp(1rem, 5.5cqi, 1.4375rem)
+}
+
+.family-name {
+  display: inline-block;
+  white-space: nowrap;
+  overflow-wrap: normal
+}
+
+.urdu,
+[lang=ar],
+[lang=ur] {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  font-weight: 400;
+  letter-spacing: normal;
+  word-break: normal;
+  line-height: 2.8
+}
+
+.gate-front .urdu,
+.hero .names {
+  display: block;
+  font-size: clamp(.9375rem, 5.7cqi, 1.6875rem);
+  white-space: nowrap;
+  line-height: 3.2;
+  padding-inline: 0;
+  margin-block: 16px 24px;
+}
+
+.urdu-name {
+  display: inline-block;
+  white-space: nowrap
+}
+
+.name-divider {
+  display: inline-block;
+  margin-inline: .65em
+}
+
+.intro p.urdu,
+.family p.urdu,
+.venue-urdu,
+.ending p.urdu {
+  font-size: clamp(1rem, .875rem + .6vw, 1.25rem);
+  line-height: 2.8;
+}
+
+.family p.urdu {
+  font-size: clamp(.9375rem, 4.9cqi, 1.1875rem)
+}
+
+.urdu-focus .family p.urdu,
+.urdu-focus .intro .urdu,
+.urdu-focus .venue-urdu {
+  font-size: clamp(1rem, .9rem + .7vw, 1.375rem)
+}
+
+.event .title-urdu {
+  font-size: clamp(1.1875rem, 6cqi, 1.5625rem);
+  line-height: 2.8
+}
+
+.gate-top,
+.mini {
+  font-size: clamp(.9375rem, .8rem + .65vw, 1.4375rem);
+  line-height: 3
+}
+
+.hero-prelude,
+.separator p {
+  font-size: clamp(1.125rem, 1rem + .7vw, 1.8125rem)
+}
+
+.eyebrow,
+.date-mark,
+.day {
+  font-family: 'Cormorant Infant', serif;
+  letter-spacing: clamp(.1em, .5vw, .25em);font-weight:500
+}
+
+.eyebrow {
+  font-size: clamp(.6875rem, .625rem + .2vw, .8125rem)
+}
+
+.date-mark,
+.day {
+  font-size: clamp(.75rem, .65rem + .3vw, .9375rem)
+}
+
+.bigdate {
+  font-size: clamp(1.875rem, 11cqi, 3.6875rem);
+  white-space: nowrap
+}
+
+.bigdate small {
+  font-size: .42em;
+  letter-spacing: .08em
+}
+
+.time {
+  font-size: clamp(1.25rem, 6cqi, 1.6875rem)
+}
+
+.primary,
+.share {
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+  font-size: clamp(1rem, .9375rem + .3vw, 1.125rem)
+}
+
+.scroll,
+footer {
+  font-size: clamp(.9375rem, .875rem + .3vw, 1.0625rem)
+}
+
+.hint {
+  font-size: clamp(.75rem, .65rem + .3vw, .9375rem)
+}
+
+.topbar {
+  flex-wrap: wrap
+}
+
+.topbar nav {
+  min-width: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end
+}
+
+@media(max-width:480px) {
+  .gate-front .eyebrow {
+    max-width: 26ch;
+    margin-inline: auto
+  }
+
+  .arch {
+    padding-inline: 18px
+  }
+
+  .event-card {
+    padding-inline: 18px
+  }
+
+}
+
+@media(max-height:640px) {
+  .gate-front h2 {
+    font-size: clamp(1.75rem, 9cqi, 2.75rem);
+    line-height: 1.25;
+    margin-block: 12px
+  }
+
+  .gate-front .urdu {
+    margin-block: 8px 14px;
+    line-height: 2.8
+  }
+
+}
+
+
+/* Pair each Urdu name with its English name, in reading order. */
+.bilingual-name {
+  display: block;
+  break-inside: avoid
+}
+
+.hero .couple-names .person-urdu,
+.gate-front .couple-names .person-urdu {
+  display: block;
+  font-size: clamp(1.125rem, 6cqi, 1.875rem);
+  line-height: 2.8;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  color: var(--gold);
+}
+
+.couple-divider {
+  display: block;
+  font-family: 'Cormorant Infant', serif;
+  font-size: .5em;
+  line-height: 1.5;
+  margin-block: .6em;
+  color: var(--gold);font-weight:500
+}
+
+@media(max-height:640px) {
+  .gate-front .couple-names .person-urdu {
+    font-size: clamp(1rem, 4.5cqi, 1.375rem);
+    line-height: 2.5
+  }
+
+  .gate-front .couple-divider {
+    margin-block: .3em
+  }
+}
+
+/* Formal Roman serif for the invitation details; calligraphy stays on names. */
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/cinzel-regular.ttf') format('truetype')
+}
+
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('assets/fonts/cinzel-semibold.ttf') format('truetype')
+}
+
+body {
+  font-family: 'Cormorant Infant', Georgia, serif;
+  font-size: clamp(.9375rem, .875rem + .3vw, 1.125rem);font-weight:500
+}
+
+.intro h2,
+.ending h2,
+.event h2,
+.family h2 {
+  font-family: 'Cormorant Infant', Georgia, serif;
+  font-weight: 500;
+  line-height: 1.55;
+  font-size: clamp(1.375rem, 6.5cqi, 2.5rem);
+  letter-spacing: .025em;
+}
+
+.hero p:not(.urdu):not(.hero-prelude),
+.intro p:not(.urdu),
+.ending p:not(.urdu),
+.venue {
+  font-size: clamp(.9375rem, .85rem + .35vw, 1.125rem);
+  line-height: 1.95;
+}
+
+.hero-prelude,
+.separator p {
+  font-family: 'Cormorant Infant', Georgia, serif;
+  font-style: normal;
+  font-size: clamp(1rem, .875rem + .5vw, 1.375rem);
+  line-height: 1.8;font-weight:500
+}
+
+.eyebrow,
+.date-mark,
+.day {
+  font-family: 'Cormorant Infant', Georgia, serif;
+  line-height: 2;font-weight:500
+}
+
+.eyebrow {
+  font-size: clamp(.625rem, .575rem + .2vw, .75rem)
+}
+
+.date-mark,
+.day {
+  font-size: clamp(.6875rem, .625rem + .2vw, .8125rem)
+}
+
+.bigdate {
+  font-size: clamp(1.5rem, 8.5cqi, 3rem);
+  line-height: 1.6;
+  font-variant-numeric: lining-nums
+}
+
+.time {
+  font-size: clamp(1.0625rem, 4.8cqi, 1.375rem);
+  line-height: 1.8
+}
+
+.primary,
+.share {
+  font-family: 'Cormorant Infant', Georgia, serif;
+  font-size: clamp(.8125rem, .75rem + .25vw, .9375rem);
+  font-weight: 500;
+  line-height: 1.7
+}
+
+nav a,
+nav button {
+  font-size: clamp(.6875rem, .625rem + .25vw, .8125rem)
+}
+
+.scroll,
+footer,
+.hint {
+  font-size: clamp(.75rem, .7rem + .2vw, .875rem);
+  line-height: 1.9
+}
+
+.family p:not(.urdu) {
+  font-family: 'Cormorant Infant', Georgia, serif;font-weight:500
+}
+
+#language {
+  font-family: 'Noto Nastaliq Urdu', serif
+}
+
+/* An ivory palace entrance keeps the bilingual names distinct from the doors. */
+.gate {
+  background: #eee1c7;
+  color: #153d32;
+  grid-template-rows: auto 1fr;
+  align-items: center;
+  padding: clamp(20px, 4svh, 48px) 18px;
+  gap: clamp(12px, 3svh, 28px);
+}
+
+.gate:after {
+  border-color: #92703d88;
+  z-index: 4
+}
+
+.gate .doors {
+  z-index: 0
+}
+
+.gate .door {
+  background: repeating-linear-gradient(90deg, transparent 0 24px, #9a763b08 25px 26px), linear-gradient(110deg, #e3d0ac, #faf2df 48%, #e1cca5);
+  border-color: #a2814b;
+  box-shadow: inset 0 0 65px #93713b35;
+}
+
+.gate .door-panel {
+  border-color: #a2814b88;
+  box-shadow: inset 0 0 0 7px #eee1c7, inset 0 0 0 8px #a2814b55;
+  background: repeating-conic-gradient(from 45deg, #a2814b0c 0% 25%, transparent 0% 50%) 50% / 38px 38px;
+}
+
+.gate .door-motif {
+  color: #9a763b28
+}
+
+.gate .door-handle {
+  border-color: #8c6934;
+  box-shadow: 0 3px 8px #62471b33
+}
+
+.gate .gate-top {
+  position: relative;
+  inset: auto;
+  z-index: 3;
+  margin: 0;
+  color: #5e4829;
+  text-shadow: none;
+  width: 100%;
+}
+
+.gate .gate-front {
+  width: min(100%, 600px);
+  padding: clamp(24px, 4svh, 44px) clamp(18px, 5vw, 40px);
+  margin-block: auto;
+  z-index: 3;
+  color: #153d32;
+  text-shadow: none;
+  background: linear-gradient(135deg, #fffaf0, #f1e5ce);
+  border: 1px solid #ae8b50;
+  border-radius: 140px 140px 6px 6px / 42px 42px 6px 6px;
+  outline: 1px solid #b4925855;
+  outline-offset: -8px;
+  box-shadow: 0 18px 60px #62471b25;
+  transition: opacity .35s ease .2s, transform .4s ease .2s;
+}
+
+.gate .gate-front .eyebrow,
+.gate .hint {
+  color: #73572d
+}
+
+.gate .gate-front .couple-names .person-urdu,
+.gate .couple-divider {
+  color: #77592d
+}
+
+.gate .primary {
+  background: #123f32;
+  color: #f7e8c8;
+  border-color: #123f32;
+  box-shadow: 0 4px 16px #123f3220
+}
+
+.gate.opening {
+  background: transparent
+}
+
+.gate.opening .gate-front {
+  opacity: 0;
+  transform: translateY(-8px)
+}
+
+@media(max-height:640px) {
+  .gate {
+    padding-block: 16px;
+    gap: 10px
+  }
+
+  .gate .gate-front {
+    padding-block: 20px
+  }
+
+  .gate .gate-top {
+    font-size: .9375rem;
+    line-height: 2.8
+  }
+}
+
+/* A quiet monogram replaces the navigation header. */
+.invitation-monogram {
+  text-align: center;
+  padding: 24px 16px 0
+}
+
+.invitation-monogram .monogram {
+  font-family: 'Cormorant Infant', serif;font-weight:500
+}
+
+
+/* Icon-only audio control, balanced against the centered monogram. */
+.invitation-monogram{position:relative;padding:24px 72px 0;min-height:68px}
+.audio-toggle{
+  position:absolute;top:20px;right:clamp(16px, 5vw, 64px);
+  display:grid;place-items:center;width:44px;height:44px;padding:0;
+  background:var(--gold);border:1px solid #efd69b;border-radius:50%;
+  color:var(--deep);cursor:pointer;box-shadow:0 3px 16px #d5b77740;
+}
+.audio-toggle:hover{background:#e8cb8d;border-color:#f5dfac}
+.audio-toggle[aria-pressed="true"]{background:#e8cb8d;border-color:#f5dfac;box-shadow:0 0 0 3px #d5b77730,0 3px 16px #d5b77740}
+.audio-toggle[aria-busy="true"]{opacity:.6}
+.audio-toggle .audio-waves{display:none}
+.audio-toggle[aria-pressed="true"] .audio-waves{display:block}
+.audio-toggle[aria-pressed="true"] .audio-muted{display:none}
+
+/* Hosts are listed in the supplied age order, with each bilingual name together. */
+.family-label{font-family: 'Cormorant Infant',Georgia,serif;font-size:clamp(.8125rem, .75rem + .3vw, 1rem);font-weight: 500;letter-spacing:.16em;color:var(--gold);margin:36px 0 18px}
+.family-list{list-style:none;margin:0;padding:0;display:grid;gap:20px 24px}
+.family-list li{min-width:0;break-inside:avoid}
+.family-list .urdu{display:block;font-size:clamp(1rem, 4.9cqi, 1.1875rem);line-height:2.8;color:var(--gold)}
+.family-list .family-name{display:block;font-family: 'Cormorant Infant',Georgia,serif;font-size:clamp(1rem, 5.5cqi, 1.4375rem);line-height:1.7;white-space:normal;text-wrap:balance;font-weight:500
+}
+@media(min-width:600px){.family-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* A quiet RSVP card closes the invitation. */
+.rsvp{max-width:560px;margin:40px auto 0;padding-top:30px;border-top:1px solid var(--line)}
+.rsvp form{text-align:start;margin-top:28px}
+.form-field{display:grid;gap:10px;margin-bottom:24px;min-width:0}
+.form-field label{font-family: 'Cormorant Infant',Georgia,serif;font-size:clamp(.8125rem, .75rem + .2vw, .9375rem);line-height:1.8;color:var(--gold);font-weight:500
+}
+.optional{color:var(--muted);font-size:.9em}
+.form-field input,.form-field select,.form-field textarea{
+  display:block;width:100%;min-width:0;min-height:48px;border:1px solid var(--line);border-radius:4px;
+  background:#03251f;color:var(--soft);padding:12px 14px;
+  font-family: 'Cormorant Infant','Noto Nastaliq Urdu',serif;font-size:1.125rem;line-height:1.9;;font-weight:500
+}
+.form-field select{padding-right:28px}
+.form-field textarea{resize:vertical;min-height:150px}
+.form-field textarea::placeholder{color:var(--muted);opacity:1}
+.form-field :is(input,select,textarea):focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.rsvp button[type="submit"]{width:100%}
+.rsvp button:disabled{opacity:.65;cursor:default}
+.ending .form-status{font-family: 'Cormorant Infant',serif;font-size:1.125rem;line-height:1.6;margin-top:18px;overflow-wrap:anywhere;font-weight:500
+}
+.form-status:empty{display:none}
+
+/* Medium-weight English details, with restrained italic invitation accents. */
+.hero p.invitation-line,.intro p.invitation-line,.ending p.invitation-line,.separator p.invitation-line{
+  font-family:'Cormorant Infant',Georgia,serif;font-weight:500;font-style:italic;
+  font-size:clamp(1.25rem, 1.1rem + .5vw, 1.625rem);line-height:1.7;
+}
+.hero p:not(.urdu):not(.hero-prelude):not(.invitation-line),.intro p:not(.urdu):not(.invitation-line),.ending p:not(.urdu):not(.invitation-line),.venue{
+  font-size:clamp(1.125rem, 1rem + .5vw, 1.375rem);
+}
+.eyebrow{font-size:clamp(.75rem, .6875rem + .2vw, .875rem)}
+.form-field label{font-size:clamp(1rem, .9375rem + .2vw, 1.125rem)}
+.primary{font-size:clamp(1rem, .9375rem + .25vw, 1.125rem)}
+
+/* Both celebrations share one continuous invitation tile and one venue. */
+.combined-events .event-card{border:1px solid var(--line);padding:36px clamp(18px, 5vw, 60px);background:linear-gradient(135deg,#10433566,#03271f66)}
+.ceremony{scroll-margin-top:24px}
+.combined-events .event-icon{font-size:28px;margin-bottom:8px}
+.combined-events .title-urdu{margin:2px 0 12px;line-height:2.6}
+.combined-events .bigdate{margin:6px 0}
+.combined-events .departure-urdu{font-size:1rem;line-height:2.6;margin:4px 0}
+.combined-events .departure-note{font-size:1.125rem;line-height:1.6;margin:6px 0 0;color:var(--muted)}
+.ceremony-divider{display:flex;align-items:center;gap:18px;width:75%;margin:28px auto;color:var(--gold)}
+.ceremony-divider:before,.ceremony-divider:after{content:'';height:1px;flex:1;background:var(--line)}
+.shared-venue{border-top:1px solid var(--line);margin-top:28px;padding-top:24px}
+.combined-events .shared-venue .venue{margin:12px 0}
+.combined-events .shared-venue .venue-urdu{margin:10px auto 18px}
+
+.crescent-icon{display:block;margin-inline:auto;color:var(--gold);width:40px;height:40px}
+
+/* Hide scrollbar chrome across viewports without disabling scrolling. */
+html,body,*{scrollbar-width:none;-ms-overflow-style:none}
+*::-webkit-scrollbar{display:none;width:0;height:0}

@@ -1,0 +1,1441 @@
+.quote-page {
+  background:
+    radial-gradient(ellipse at 85% 10%, #eef0e5, transparent 45%), #fcfaf5;
+  padding-bottom: 15px;
+}
+.quote-page-intro {
+  text-align: center;
+  padding: 58px 0 44px;
+}
+.quote-page-intro h1 {
+  font-size: clamp(46px, 5vw, 68px);
+  margin: 20px 0 19px;
+  letter-spacing: -1.7px;
+}
+.quote-page-intro > p {
+  font-size: 13px;
+  max-width: 540px;
+  margin: auto;
+}
+.quote-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 35px;
+  align-items: start;
+}
+.quote-sidebar {
+  position: sticky;
+  top: 28px;
+  padding: 25px 0;
+}
+.quote-side-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: #6e805e;
+  padding: 0 16px 28px;
+}
+.quote-side-heading > span {
+  font-size: 8px;
+  letter-spacing: 2px;
+  line-height: 1.8;
+}
+.quote-sidebar ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.quote-sidebar li + li {
+  margin-top: 7px;
+}
+.quote-sidebar nav button {
+  border: 0;
+  background: transparent;
+  width: 100%;
+  padding: 13px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #58684f;
+}
+.quote-sidebar nav button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.quote-sidebar nav button[aria-current="step"] {
+  background: #e9eedf;
+  color: #234d3b;
+}
+.quote-sidebar nav button:hover:not(:disabled) {
+  background: #f0f1e6;
+}
+.quote-sidebar nav button > span:last-child {
+  font-size: 12px;
+  font-weight: 550;
+}
+.quote-sidebar nav small {
+  display: block;
+  font-size: 8px;
+  font-weight: 400;
+  margin-top: 5px;
+  color: #53614c;
+}
+.quote-step-number {
+  width: 29px;
+  height: 29px;
+  border: 1px solid #d4dcc7;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+.quote-sidebar nav button[aria-current="step"] .quote-step-number {
+  background: #234d3b;
+  border-color: #234d3b;
+  color: white;
+}
+.quote-starting-point {
+  padding: 21px;
+  border: 1px solid #dce1d1;
+  background: #f8f7ef;
+  border-radius: 6px;
+  margin: 27px 9px 0;
+}
+.quote-starting-point > span {
+  font: 33px var(--serif);
+  color: #8c986f;
+  display: block;
+  line-height: 1;
+  margin-bottom: 17px;
+}
+.quote-starting-point > small {
+  display: block;
+  font-size: 7px;
+  letter-spacing: 1.6px;
+  color: #53614c;
+}
+.quote-starting-point > strong {
+  font: 24px var(--serif);
+  display: block;
+  margin: 10px 0 13px;
+}
+.quote-starting-point > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 9px;
+  border-bottom: 1px solid #b0b99d;
+  padding-bottom: 5px;
+}
+.quote-package-note {
+  font-size: 10px;
+  line-height: 1.8;
+  padding: 18px 16px 0;
+  color: #52684c;
+}
+.quote-package-note small {
+  display: block;
+  font-size: 9px;
+  color: #869078;
+}
+.quote-side-note {
+  padding: 26px 16px 0;
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  color: #869174;
+}
+.quote-side-note svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.quote-side-note p {
+  font-size: 9px;
+  line-height: 1.9;
+  max-width: 190px;
+}
+.quote-main {
+  min-width: 0;
+}
+.quote-preview-banner {
+  padding: 16px 21px;
+  background: #f1ebdb;
+  border: 1px solid #e5dbc3;
+  border-radius: 6px 6px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.quote-preview-banner > span {
+  font-size: 7px;
+  letter-spacing: 1.2px;
+  font-weight: 650;
+  white-space: nowrap;
+  border: 1px solid #cfbf9e;
+  padding: 6px 8px;
+  border-radius: 3px;
+  color: #735d3d;
+}
+.quote-preview-banner p {
+  font-size: 10px;
+  line-height: 1.8;
+  color: #65563f;
+}
+.quote-main form {
+  background: #fffef9;
+  border: 1px solid #e1e5d7;
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+  padding: 36px 39px 27px;
+  box-shadow: 0 10px 40px #34472a04;
+}
+.quote-form-header {
+  position: relative;
+  margin-bottom: 30px;
+}
+.quote-form-header .eyebrow {
+  font-size: 8px;
+  letter-spacing: 1.6px;
+  max-width: 75%;
+}
+.quote-step-counter {
+  position: absolute;
+  right: 0;
+  top: 3px;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #53614c;
+  font-variant-numeric: tabular-nums;
+}
+.quote-progress-track {
+  height: 2px;
+  background: #e6eadf;
+  margin: 19px 0 27px;
+  overflow: hidden;
+}
+.quote-progress-track > span {
+  height: 100%;
+  display: block;
+  background: #84956e;
+  transition: width 0.25s;
+}
+.quote-form-header h2 {
+  font-size: 40px;
+  letter-spacing: -1px;
+  scroll-margin-top: 35px;
+}
+.quote-form-header h2:focus {
+  outline: none;
+}
+.quote-form-header > p {
+  font-size: 12px;
+  margin-top: 13px;
+  line-height: 1.8;
+}
+.quote-form-header > small {
+  font-size: 9px;
+  color: #53614c;
+  display: block;
+  margin-top: 17px;
+}
+.quote-step-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.quote-field,
+.quote-choice-field {
+  min-width: 0;
+}
+.quote-field > label,
+.quote-choice-field > legend {
+  display: block;
+  font-size: 12px;
+  font-weight: 550;
+  margin-bottom: 9px;
+  color: #364d3d;
+}
+.quote-field > label > small {
+  font-size: 9px;
+  font-weight: 400;
+  color: #53614c;
+  margin-left: 8px;
+}
+.required-mark {
+  color: #7d875c;
+}
+.quote-field input,
+.quote-field textarea,
+.quote-field select {
+  display: block;
+  width: 100%;
+  border: 1px solid #dce2d2;
+  border-radius: 4px;
+  background: #fcfcf6;
+  color: #2d4434;
+  padding: 13px 14px;
+  font:
+    13px/1.5 "DM Sans",
+    sans-serif;
+  min-height: 48px;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+  min-width: 0;
+}
+.quote-field input::placeholder,
+.quote-field textarea::placeholder {
+  color: #929a87;
+  opacity: 1;
+}
+.quote-field textarea {
+  resize: vertical;
+  min-height: 108px;
+  line-height: 1.8;
+}
+.quote-field select {
+  padding-right: 30px;
+  cursor: pointer;
+}
+.quote-field input:focus,
+.quote-field textarea:focus,
+.quote-field select:focus {
+  outline: none;
+  border-color: #879d76;
+  box-shadow: 0 0 0 3px #e9eedf;
+}
+.quote-field input[aria-invalid="true"],
+.quote-field textarea[aria-invalid="true"],
+.quote-field select[aria-invalid="true"] {
+  border-color: #b37061;
+}
+.field-hint {
+  font-size: 9px !important;
+  line-height: 1.9 !important;
+  color: #53614c !important;
+  margin-top: 8px;
+}
+.field-error {
+  font-size: 10px !important;
+  line-height: 1.8 !important;
+  color: #964a3b !important;
+  margin-top: 8px;
+}
+.quote-field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.quote-choice-field {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+.quote-choice-field > .field-hint {
+  margin: -3px 0 13px;
+}
+.quote-choice-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.quote-choice {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+  padding: 17px 16px;
+  background: #fcfcf6;
+  border: 1px solid #dfe4d5;
+  border-radius: 4px;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+.quote-choice.is-selected {
+  background: #eff3e6;
+  border-color: #9aac87;
+}
+.quote-choice input {
+  flex-shrink: 0;
+  margin: 2px 0 0;
+  width: 16px;
+  height: 16px;
+  accent-color: #28553e;
+}
+.quote-choice > span {
+  flex: 1;
+  min-width: 0;
+}
+.quote-choice strong {
+  font-size: 12px;
+  font-weight: 500;
+  display: block;
+  line-height: 1.6;
+}
+.quote-choice small {
+  font-size: 10px;
+  line-height: 1.8;
+  display: block;
+  margin-top: 5px;
+  color: #53614c;
+}
+.quote-choice > svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: #6f8855;
+  opacity: 0;
+}
+.quote-choice.is-selected > svg {
+  opacity: 1;
+}
+.quote-choice:focus-within {
+  outline: 2px solid #99aa87;
+  outline-offset: 3px;
+}
+.compact-choices .quote-choice-grid {
+  grid-template-columns: 1fr 1fr;
+}
+.compact-choices .quote-choice {
+  padding: 15px 13px;
+  align-items: center;
+}
+.compact-choices .quote-choice input {
+  margin: 0;
+}
+.compact-choices .quote-choice > svg {
+  display: none;
+}
+.quote-check-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.quote-check-grid > label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #dfe4d5;
+  background: #fcfcf6;
+  padding: 13px 14px;
+  border-radius: 4px;
+  font-size: 11px;
+  line-height: 1.7;
+  cursor: pointer;
+  min-width: 0;
+}
+.quote-check-grid > label.is-selected {
+  background: #eff3e6;
+  border-color: #a5b393;
+}
+.quote-check-grid input {
+  width: 15px;
+  height: 15px;
+  accent-color: #28553e;
+  flex-shrink: 0;
+  margin: 0;
+}
+.quote-check-grid > label:focus-within {
+  outline: 2px solid #99aa87;
+  outline-offset: 2px;
+}
+.quote-inline-note {
+  background: #f4f4ea;
+  border-left: 2px solid #bdc6a5;
+  padding: 14px 17px;
+  font-size: 10px !important;
+  line-height: 1.9 !important;
+  color: #53614c !important;
+}
+.quote-inline-note p {
+  font-size: 10px;
+  line-height: 1.9;
+}
+.quote-inline-note p + p {
+  margin-top: 10px;
+}
+.quote-selected-preview {
+  background: #f1f3e8;
+  border: 1px solid #e0e6d4;
+  border-radius: 4px;
+  padding: 17px 20px;
+  margin-top: -11px;
+}
+.quote-selected-preview > span {
+  display: block;
+  font-size: 7px;
+  letter-spacing: 1.6px;
+  color: #53614c;
+}
+.quote-selected-preview > strong {
+  display: block;
+  font: 26px var(--serif);
+  margin: 7px 0 11px;
+}
+.quote-selected-preview > a {
+  font-size: 9px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border-bottom: 1px solid #bac5a9;
+  padding-bottom: 4px;
+}
+.quote-soft-panel {
+  background: #f4f3e9;
+  border: 1px solid #e6e7d8;
+  border-radius: 5px;
+  padding: 27px;
+}
+.quote-soft-panel > span {
+  font-size: 32px;
+  color: #9b9769;
+}
+.quote-soft-panel h3 {
+  font: 28px var(--serif);
+  margin: 13px 0;
+}
+.quote-soft-panel p {
+  font-size: 11px;
+  margin-top: 13px;
+  line-height: 1.9;
+}
+.quote-address {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  background: #f1f4e7;
+  border: 1px solid #dfe6d2;
+  padding: 15px 17px;
+  color: #698058;
+  overflow-wrap: anywhere;
+  margin-top: -9px;
+}
+.quote-address > span {
+  min-width: 0;
+}
+.quote-address svg {
+  flex-shrink: 0;
+}
+.hosting-estimate {
+  background: #edf2e3;
+  border: 1px solid #dce6cd;
+  border-radius: 5px;
+  padding: 23px 25px;
+}
+.hosting-estimate > span {
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: #53614c;
+}
+.hosting-estimate > strong {
+  display: block;
+  font: 49px var(--serif);
+  margin: 11px 0 13px;
+  line-height: 1;
+}
+.hosting-estimate > p {
+  font-size: 11px;
+  line-height: 1.9;
+  max-width: 430px;
+}
+.hosting-estimate > small {
+  font-size: 9px;
+  line-height: 1.8;
+  display: block;
+  color: #53614c;
+  margin-top: 13px;
+}
+.quote-error-summary {
+  border: 1px solid #d6ac9f;
+  background: #fcf3ed;
+  border-radius: 5px;
+  padding: 18px 21px;
+  margin-bottom: 26px;
+  color: #874a3d;
+  scroll-margin-top: 30px;
+}
+.quote-error-summary > strong {
+  font-size: 12px;
+  font-weight: 550;
+}
+.quote-error-summary ul {
+  padding-left: 17px;
+  margin: 11px 0 0;
+  list-style: disc;
+}
+.quote-error-summary li {
+  font-size: 10px;
+  line-height: 1.9;
+}
+.quote-error-summary li + li {
+  margin-top: 5px;
+}
+.quote-error-summary a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.quote-form-actions {
+  border-top: 1px solid #e3e8d9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 33px;
+  padding-top: 25px;
+}
+.quote-form-actions .button {
+  font-size: 12px;
+  padding: 14px 22px;
+  gap: 20px;
+  min-height: 48px;
+}
+.quote-back {
+  border: 0;
+  background: transparent;
+  color: #53614c;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  padding: 9px 0;
+  cursor: pointer;
+}
+.quote-back-to-review {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 17px 0 0 auto;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #bdc8ae;
+  font-size: 10px;
+  padding: 6px 0;
+  color: #758767;
+  cursor: pointer;
+}
+.quote-form-foot {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 3px;
+  font-size: 9px;
+  color: #86927a;
+}
+.quote-form-foot > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+}
+.quote-form-foot details {
+  border: 0;
+  max-width: 250px;
+  text-align: right;
+}
+.quote-form-foot summary {
+  font-size: 9px;
+  padding: 0;
+  display: inline-block;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 400;
+  color: #86927a;
+}
+.quote-form-foot details p {
+  font-size: 9px;
+  padding: 10px 0;
+}
+.quote-form-foot details button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 9px;
+  border: 1px solid #ddd7c9;
+  padding: 9px 11px;
+  background: #f8f2e8;
+  color: #8b6d51;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.quote-next-note {
+  padding-block: 55px 60px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.quote-next-note > span {
+  font-size: 45px;
+  color: #a79e72;
+}
+.quote-next-note > div {
+  flex: 1;
+}
+.quote-next-note h2 {
+  font: 32px var(--serif);
+  letter-spacing: -0.6px;
+}
+.quote-next-note p {
+  font-size: 11px;
+  max-width: 650px;
+  margin-top: 12px;
+}
+.quote-next-note .text-link {
+  flex-shrink: 0;
+  font-size: 10px;
+}
+.review-section {
+  border: 1px solid #e1e6d8;
+  border-radius: 5px;
+  padding: 20px;
+}
+.review-section > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-bottom: 1px solid #e5e9de;
+  padding-bottom: 13px;
+  margin-bottom: 14px;
+}
+.review-section h3 {
+  font: 24px var(--serif);
+}
+.review-section button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: none;
+  border: 0;
+  color: #53614c;
+  font-size: 10px;
+  cursor: pointer;
+  padding: 7px 0;
+}
+.review-section dl {
+  margin: 0;
+}
+.review-row {
+  display: grid;
+  grid-template-columns: 145px minmax(0, 1fr);
+  gap: 20px;
+  padding: 7px 0;
+  line-height: 1.9;
+  font-size: 11px;
+}
+.review-row dt {
+  color: #53614c;
+  font-size: 10px;
+}
+.review-row dd {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: #4a6045;
+}
+.review-pricing-note {
+  background: #f5f2e7;
+  padding: 20px;
+  border-radius: 4px;
+}
+.review-pricing-note strong {
+  font-size: 11px;
+  font-weight: 500;
+  color: #53614c;
+}
+.review-pricing-note p {
+  font-size: 10px;
+  line-height: 1.9;
+  margin-top: 8px;
+}
+.consent-field {
+  padding-top: 4px;
+}
+.consent-field label {
+  display: flex;
+  gap: 12px;
+  align-items: start;
+  cursor: pointer;
+  font-size: 11px;
+  line-height: 1.9;
+  color: #5d7052;
+}
+.consent-field input {
+  accent-color: #28553e;
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  margin: 3px 0 0;
+}
+.consent-field > p:not(.field-error) {
+  font-size: 9px;
+  line-height: 1.9;
+  color: #53614c;
+  margin-top: 13px;
+  padding-left: 29px;
+}
+.consent-field a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.quote-verification-note {
+  display: flex;
+  gap: 13px;
+  align-items: start;
+  background: #f0f2e8;
+  border: 1px dashed #cfd8c0;
+  border-radius: 4px;
+  padding: 19px;
+}
+.quote-verification-note svg {
+  flex-shrink: 0;
+  color: #8b9b75;
+}
+.quote-verification-note strong {
+  font-size: 11px;
+  font-weight: 500;
+  color: #53614c;
+}
+.quote-verification-note p {
+  font-size: 10px;
+  line-height: 1.9;
+  margin-top: 8px;
+}
+.quote-local-ready {
+  display: flex;
+  gap: 15px;
+  align-items: start;
+  background: #eaf2df;
+  border: 1px solid #adbf98;
+  padding: 24px;
+  border-radius: 5px;
+  margin-top: 28px;
+  scroll-margin-top: 30px;
+}
+.quote-local-ready > svg {
+  flex-shrink: 0;
+  color: #6a8952;
+}
+.quote-local-ready h3 {
+  font: 27px var(--serif);
+  line-height: 1.1;
+}
+.quote-local-ready p {
+  font-size: 11px;
+  line-height: 1.9;
+  margin-top: 13px;
+}
+.quote-local-ready .button {
+  margin-top: 19px;
+  padding: 13px 17px;
+  gap: 10px;
+  font-size: 10px;
+}
+.quote-local-ready .quote-download-note {
+  font-size: 9px;
+  line-height: 1.9;
+  color: #6e855b;
+}
+.quote-choice-field:focus-visible {
+  outline: 2px solid #99aa87;
+  outline-offset: 5px;
+}
+.quote-preview-banner + p {
+  margin-top: 0;
+}
+@media (max-width: 1050px) {
+  .quote-layout {
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: 25px;
+  }
+  .quote-main form {
+    padding: 29px 28px 24px;
+  }
+  .quote-field-grid {
+    gap: 15px;
+  }
+  .quote-next-note {
+    gap: 20px;
+  }
+  .quote-next-note > span {
+    display: none;
+  }
+  .quote-step-counter {
+    font-size: 7px;
+  }
+  .review-row {
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 15px;
+  }
+  .quote-form-header .eyebrow {
+    font-size: 7px;
+  }
+  .quote-preview-banner {
+    padding: 15px;
+    gap: 12px;
+  }
+}
+@media (max-width: 760px) {
+  .quote-page-intro {
+    padding: 37px 0 30px;
+  }
+  .quote-page-intro .eyebrow {
+    font-size: 7px;
+    letter-spacing: 1.4px;
+  }
+  .quote-page-intro h1 {
+    font-size: 47px;
+    letter-spacing: -1.2px;
+    margin-top: 16px;
+  }
+  .quote-page-intro > p {
+    font-size: 12px;
+  }
+  .quote-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .quote-sidebar {
+    position: static;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .quote-side-heading {
+    display: none;
+  }
+  .quote-sidebar ol {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 4px;
+  }
+  .quote-sidebar li + li {
+    margin: 0;
+  }
+  .quote-sidebar nav button {
+    flex-direction: column;
+    padding: 10px 0;
+    gap: 7px;
+    text-align: center;
+    border-radius: 4px;
+  }
+  .quote-sidebar nav button > span:last-child {
+    font-size: 8px;
+    font-weight: 500;
+  }
+  .quote-sidebar nav small {
+    display: none;
+  }
+  .quote-step-number {
+    width: 25px;
+    height: 25px;
+    font-size: 8px;
+  }
+  .quote-starting-point {
+    margin: 17px 0 0;
+    padding: 15px 18px;
+    display: grid;
+    grid-template-columns: 35px 1fr;
+    gap: 0 10px;
+    align-items: center;
+  }
+  .quote-starting-point > span {
+    grid-row: 1/4;
+    margin: 0;
+    font-size: 30px;
+  }
+  .quote-starting-point > small {
+    font-size: 6px;
+  }
+  .quote-starting-point > strong {
+    font-size: 24px;
+    margin: 6px 0 8px;
+  }
+  .quote-starting-point > a {
+    justify-self: start;
+    font-size: 8px;
+  }
+  .quote-package-note {
+    font-size: 10px;
+    padding: 13px 3px 0;
+  }
+  .quote-package-note small {
+    font-size: 9px;
+  }
+  .quote-side-note {
+    padding: 14px 3px 0;
+    gap: 8px;
+  }
+  .quote-side-note p {
+    font-size: 9px;
+    line-height: 1.8;
+    max-width: none;
+  }
+  .quote-side-note svg {
+    width: 13px;
+    margin-top: 2px;
+  }
+  .quote-preview-banner {
+    padding: 14px 16px;
+    gap: 10px;
+    align-items: start;
+  }
+  .quote-preview-banner > span {
+    font-size: 6px;
+    letter-spacing: 0.7px;
+    padding: 6px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .quote-preview-banner p {
+    font-size: 9px;
+    line-height: 1.8;
+  }
+  .quote-main form {
+    padding: 24px 20px 21px;
+  }
+  .quote-form-header {
+    margin-bottom: 26px;
+  }
+  .quote-form-header .eyebrow {
+    font-size: 7px;
+    letter-spacing: 1px;
+    max-width: 72%;
+  }
+  .quote-step-counter {
+    font-size: 6px;
+    letter-spacing: 0.8px;
+    top: 4px;
+  }
+  .quote-progress-track {
+    margin-top: 17px;
+    margin-bottom: 23px;
+  }
+  .quote-form-header h2 {
+    font-size: 36px;
+    letter-spacing: -0.8px;
+    scroll-margin-top: 20px;
+  }
+  .quote-form-header > p {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+  .quote-form-header > small {
+    font-size: 8px;
+  }
+  .quote-field > label,
+  .quote-choice-field > legend {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+  .quote-field > label > small {
+    font-size: 8px;
+  }
+  .quote-field input,
+  .quote-field textarea,
+  .quote-field select {
+    font-size: 16px;
+    padding: 12px;
+    min-height: 49px;
+  }
+  .quote-field textarea {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  .field-hint {
+    font-size: 9px !important;
+    line-height: 1.9 !important;
+  }
+  .field-error {
+    font-size: 10px !important;
+  }
+  .quote-field-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .quote-step-fields {
+    gap: 24px;
+  }
+  .quote-choice {
+    padding: 15px 12px;
+    gap: 10px;
+  }
+  .quote-choice strong {
+    font-size: 11px;
+  }
+  .quote-choice small {
+    font-size: 9px;
+  }
+  .quote-choice > svg {
+    width: 13px;
+  }
+  .quote-check-grid {
+    gap: 8px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .quote-check-grid > label {
+    padding: 12px 10px;
+    font-size: 10px;
+    gap: 8px;
+    line-height: 1.7;
+  }
+  .quote-check-grid input {
+    width: 14px;
+    height: 14px;
+  }
+  .compact-choices .quote-choice {
+    padding: 13px 10px;
+    gap: 9px;
+  }
+  .quote-inline-note {
+    padding: 13px 14px;
+    font-size: 9px !important;
+  }
+  .quote-inline-note p {
+    font-size: 9px;
+  }
+  .quote-soft-panel {
+    padding: 21px;
+  }
+  .quote-soft-panel h3 {
+    font-size: 26px;
+  }
+  .quote-soft-panel p {
+    font-size: 10px;
+  }
+  .quote-address {
+    font-size: 10px;
+    padding: 13px;
+    line-height: 1.8;
+  }
+  .hosting-estimate {
+    padding: 20px;
+  }
+  .hosting-estimate > span {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+  .hosting-estimate > strong {
+    font-size: 46px;
+  }
+  .hosting-estimate > p {
+    font-size: 10px;
+  }
+  .hosting-estimate > small {
+    font-size: 8px;
+  }
+  .quote-form-actions {
+    gap: 12px;
+    padding-top: 23px;
+  }
+  .quote-form-actions .button {
+    font-size: 10px;
+    padding: 14px 16px;
+    gap: 12px;
+  }
+  .quote-back {
+    font-size: 9px;
+    gap: 6px;
+  }
+  .quote-back svg {
+    width: 13px;
+  }
+  .quote-back-to-review {
+    font-size: 9px;
+  }
+  .quote-form-foot {
+    font-size: 8px;
+    gap: 13px;
+  }
+  .quote-form-foot > span {
+    font-size: 8px;
+    line-height: 1.8;
+    align-items: start;
+    max-width: 160px;
+  }
+  .quote-form-foot > span svg {
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .quote-form-foot summary {
+    font-size: 8px;
+    white-space: nowrap;
+  }
+  .quote-form-foot details {
+    max-width: 145px;
+  }
+  .quote-form-foot details p {
+    font-size: 8px;
+  }
+  .quote-next-note {
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    padding-block: 35px 45px;
+  }
+  .quote-next-note h2 {
+    font-size: 29px;
+  }
+  .quote-next-note p {
+    font-size: 10px;
+  }
+  .quote-next-note .text-link {
+    font-size: 10px;
+  }
+  .review-section {
+    padding: 16px;
+  }
+  .review-section h3 {
+    font-size: 23px;
+  }
+  .review-section button {
+    font-size: 9px;
+  }
+  .review-row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+    padding: 9px 0;
+  }
+  .review-row dt {
+    font-size: 9px;
+  }
+  .review-row dd {
+    font-size: 11px;
+  }
+  .review-pricing-note {
+    padding: 16px;
+  }
+  .review-pricing-note strong {
+    font-size: 10px;
+  }
+  .review-pricing-note p {
+    font-size: 9px;
+  }
+  .consent-field label {
+    font-size: 10px;
+    gap: 11px;
+  }
+  .consent-field > p:not(.field-error) {
+    font-size: 9px;
+    padding-left: 28px;
+  }
+  .quote-verification-note {
+    padding: 16px;
+    gap: 10px;
+  }
+  .quote-verification-note strong {
+    font-size: 10px;
+  }
+  .quote-verification-note p {
+    font-size: 9px;
+  }
+  .quote-local-ready {
+    padding: 18px;
+    gap: 11px;
+  }
+  .quote-local-ready h3 {
+    font-size: 25px;
+  }
+  .quote-local-ready p {
+    font-size: 10px;
+  }
+  .quote-local-ready > svg {
+    width: 20px;
+  }
+  .quote-local-ready .button {
+    font-size: 10px;
+    padding: 12px;
+    gap: 8px;
+  }
+  .quote-error-summary {
+    padding: 17px;
+  }
+  .quote-error-summary > strong {
+    font-size: 11px;
+  }
+}
+@media (max-width: 380px) {
+  .quote-page-intro h1 {
+    font-size: 41px;
+  }
+  .quote-page-intro .eyebrow {
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+  .quote-main form {
+    padding-inline: 16px;
+  }
+  .quote-sidebar nav button > span:last-child {
+    font-size: 7px;
+  }
+  .quote-check-grid {
+    grid-template-columns: 1fr;
+  }
+  .quote-form-header h2 {
+    font-size: 32px;
+  }
+  .quote-form-header .eyebrow {
+    font-size: 6px;
+  }
+  .quote-form-actions .button {
+    font-size: 9px;
+    padding-inline: 12px;
+    gap: 8px;
+  }
+  .quote-back {
+    font-size: 8px;
+  }
+  .quote-local-ready {
+    display: block;
+  }
+  .quote-local-ready > svg {
+    margin-bottom: 12px;
+  }
+  .quote-starting-point > strong {
+    font-size: 22px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .quote-progress-track > span,
+  .quote-field input,
+  .quote-field textarea,
+  .quote-choice {
+    transition: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .quote-field textarea {
+    font-size: 16px;
+  }
+}
+.quote-turnstile {
+  margin-top: 25px;
+  padding: 20px;
+  border: 1px solid #dfe6d2;
+  background: #f8faf1;
+  min-width: 0;
+  overflow: hidden;
+}
+.quote-turnstile > strong {
+  display: block;
+  font-size: 11px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+.quote-turnstile > div {
+  min-height: 65px;
+  max-width: 100%;
+}
+.quote-turnstile small {
+  font-size: 9px;
+  line-height: 1.9;
+  display: block;
+  color: #859376;
+  margin-top: 12px;
+}
+.quote-turnstile p {
+  font-size: 11px;
+  line-height: 1.9;
+  color: #934a3b;
+}
+.quote-turnstile p button {
+  background: none;
+  border: 0;
+  padding: 0;
+  text-decoration: underline;
+  cursor: pointer;
+  color: inherit;
+}
+.quote-form-actions .button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+  transform: none;
+}
+.quote-submission-receipt {
+  padding: 40px;
+  background: #fffef9;
+  border: 1px solid #d8e2ca;
+  border-radius: 0 0 7px 7px;
+}
+.quote-submission-receipt > svg {
+  color: #6f8c58;
+  margin-bottom: 23px;
+}
+.quote-submission-receipt > .eyebrow {
+  display: block;
+}
+.quote-submission-receipt h2 {
+  font: 43px var(--serif);
+  margin: 17px 0;
+  line-height: 1.08;
+}
+.quote-submission-receipt p {
+  font-size: 12px;
+  line-height: 1.9;
+}
+.quote-submission-receipt code {
+  display: block;
+  background: #edf3e2;
+  border: 1px solid #dbe5ca;
+  padding: 15px;
+  margin-block: 25px;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #48663d;
+}
+.quote-submission-receipt > div {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+.quote-submission-receipt .button {
+  font-size: 11px;
+  gap: 12px;
+}
+@media (max-width: 760px) {
+  .quote-submission-receipt {
+    padding: 25px 20px;
+  }
+  .quote-submission-receipt h2 {
+    font-size: 35px;
+  }
+  .quote-submission-receipt p {
+    font-size: 11px;
+  }
+  .quote-submission-receipt code {
+    font-size: 10px;
+  }
+  .quote-turnstile {
+    padding: 12px;
+  }
+  .quote-submission-receipt .button {
+    font-size: 10px;
+  }
+}
+.quote-submit-lock {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.quote-main form[aria-busy="true"] {
+  cursor: progress;
+}
+/* Form instructions and optional markers remain readable on small screens. */
+.quote-form-header .eyebrow, .quote-step-counter, .quote-form-header > small,
+.quote-field label small, .field-hint, .quote-preview-banner p, .quote-back,
+.quote-steps small { font-size: 12px; }
+.quote-starting-point > small, .quote-inline-note, .quote-choice > span > small,
+.quote-selected-preview > span, .hosting-estimate > span, .hosting-estimate > small,
+.review-section button, #quote-consent-note { font-size: 12px; }
+.review-row dt, .review-row dd { font-size: 13px; line-height: 1.6; }

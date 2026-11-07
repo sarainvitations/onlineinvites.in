@@ -1,0 +1,973 @@
+/* Invitation palettes intentionally live independently of the studio palette. */
+.premium-velvet {
+  --p-bg: #260c18;
+  --p-ink: #f8e6cb;
+  --p-accent: #d2af70;
+  --p-soft: #421526;
+  --p-fabric: #651a35;
+  --p-shadow: #170812;
+  --p-font: "Bodoni Moda", Georgia, serif;
+  --p-line: #b58d574d;
+}
+.premium-lunar {
+  --p-bg: #0c142d;
+  --p-ink: #e9edf9;
+  --p-accent: #bdcce7;
+  --p-soft: #172541;
+  --p-fabric: #344467;
+  --p-shadow: #050b1c;
+  --p-font: "Cormorant Garamond", Georgia, serif;
+  --p-line: #adbed54d;
+}
+.premium-solstice {
+  --p-bg: #512c28;
+  --p-ink: #ffe1bc;
+  --p-accent: #ffbb77;
+  --p-soft: #67372b;
+  --p-fabric: #a04c30;
+  --p-shadow: #331e20;
+  --p-font: "Bodoni Moda", Georgia, serif;
+  --p-line: #eea8755c;
+}
+.premium-palace {
+  --p-bg: #101c4a;
+  --p-ink: #f2dfac;
+  --p-accent: #d2b35c;
+  --p-soft: #1b2b62;
+  --p-fabric: #283878;
+  --p-shadow: #090f2c;
+  --p-font: "Cinzel", Georgia, serif;
+  --p-line: #d2b35c55;
+}
+.premium-letter {
+  --p-bg: #f1ece2;
+  --p-ink: #382d2b;
+  --p-accent: #8a6a45;
+  --p-soft: #e5ded1;
+  --p-fabric: #d2c6b1;
+  --p-shadow: #b6a58b;
+  --p-font: "Bodoni Moda", Georgia, serif;
+  --p-line: #88705355;
+}
+.premium-noir {
+  --p-bg: #101115;
+  --p-ink: #f2e5c6;
+  --p-accent: #d2b371;
+  --p-soft: #1e2026;
+  --p-fabric: #343137;
+  --p-shadow: #040507;
+  --p-font: "Cinzel", Georgia, serif;
+  --p-line: #c3a36855;
+}
+.premium-provence {
+  --p-bg: #f8efd4;
+  --p-ink: #293b68;
+  --p-accent: #536bb1;
+  --p-soft: #e9dfbf;
+  --p-fabric: #647ab8;
+  --p-shadow: #253963;
+  --p-font: "Bodoni Moda", Georgia, serif;
+  --p-line: #536bb155;
+}
+.premium-lotus {
+  --p-bg: #2d132c;
+  --p-ink: #f8dfce;
+  --p-accent: #d7a088;
+  --p-soft: #421d3c;
+  --p-fabric: #6e3254;
+  --p-shadow: #1b0b1c;
+  --p-font: "Cormorant Garamond", Georgia, serif;
+  --p-line: #d7a08855;
+}
+.premium-ocean {
+  --p-bg: #092f3e;
+  --p-ink: #f7ded1;
+  --p-accent: #f2a491;
+  --p-soft: #104657;
+  --p-fabric: #1d6577;
+  --p-shadow: #041f2e;
+  --p-font: "Bodoni Moda", Georgia, serif;
+  --p-line: #bce1dd44;
+}
+.premium-crystal {
+  --p-bg: #20113d;
+  --p-ink: #f1e9ff;
+  --p-accent: #d4bbff;
+  --p-soft: #382059;
+  --p-fabric: #674397;
+  --p-shadow: #100820;
+  --p-font: "DM Sans", sans-serif;
+  --p-line: #d4bbff55;
+}
+.premium-lantern {
+  --p-bg: #351e3a;
+  --p-ink: #ffeacd;
+  --p-accent: #efca82;
+  --p-soft: #4a2b4a;
+  --p-fabric: #80566a;
+  --p-shadow: #211426;
+  --p-font: "Cormorant Garamond", Georgia, serif;
+  --p-line: #efca8255;
+}
+.premium-silk {
+  --p-bg: #421b1b;
+  --p-ink: #fae1b7;
+  --p-accent: #c9a365;
+  --p-soft: #632724;
+  --p-fabric: #a23b2b;
+  --p-shadow: #2b1013;
+  --p-font: "Cinzel", Georgia, serif;
+  --p-line: #c9a36566;
+}
+.premium-cover {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: var(--p-bg);
+  color: var(--p-ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 24px;
+  transition: transform 0.7s;
+}
+.premium-cover .scene {
+  opacity: 0.75;
+}
+.cover-edition,
+.cover-bottom {
+  position: relative;
+  z-index: 2;
+  font:
+    6px/1.8 "DM Sans",
+    sans-serif;
+  letter-spacing: 2px;
+}
+.cover-edition {
+  margin-bottom: auto;
+}
+.cover-bottom {
+  margin-top: auto;
+  font-size: 5px;
+  letter-spacing: 1.1px;
+}
+.cover-composition {
+  position: relative;
+  z-index: 2;
+  margin-block: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+}
+.cover-symbol {
+  font: 32px var(--p-font);
+  color: var(--p-accent);
+  margin-bottom: 12px;
+}
+.cover-names {
+  font: 34px/1.05 var(--p-font);
+  letter-spacing: -1px;
+  max-width: 100%;
+}
+.cover-names > span {
+  display: block;
+}
+.cover-names i {
+  display: block;
+  font:
+    italic 20px "Cormorant Garamond",
+    Georgia,
+    serif;
+  margin: 6px;
+}
+.cover-date {
+  display: block;
+  font-size: 6px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 22px;
+}
+.premium-cover:after {
+  content: "";
+  position: absolute;
+  inset: 15px;
+  border: 1px solid var(--p-line);
+  pointer-events: none;
+  z-index: 1;
+}
+.gallery-art-link:has(.premium-cover) {
+  background: var(--p-bg);
+}
+.gallery-art-link .premium-cover {
+  width: 100%;
+  height: 100%;
+  transform: none;
+  box-shadow: none;
+}
+.gallery-art-link:hover .premium-cover {
+  transform: scale(1.035);
+}
+.gallery-art-link:has(.premium-cover) .preview-pill {
+  background: #fff9ed;
+  color: #252231;
+  box-shadow: 0 4px 14px #0002;
+  bottom: 17px;
+}
+.premium-cover .cover-bottom {
+  margin-bottom: 34px;
+}
+.cover-editorial .cover-composition {
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+  padding-inline: 8px;
+}
+.cover-editorial .cover-names {
+  font-size: 42px;
+}
+.cover-editorial .cover-symbol {
+  display: none;
+}
+.premium-crystal .cover-names {
+  font-weight: 550;
+  font-size: 58px;
+  letter-spacing: -3px;
+}
+.premium-crystal .cover-edition {
+  letter-spacing: 3px;
+}
+.premium-palace .cover-names,
+.premium-silk .cover-names {
+  font-size: 28px;
+  letter-spacing: -0.5px;
+}
+.premium-ocean .cover-names {
+  font-size: 38px;
+  font-style: italic;
+}
+.premium-letter .cover-names {
+  font-size: 40px;
+}
+.premium-solstice .cover-composition {
+  margin-top: 35px;
+}
+.premium-provence .cover-composition {
+  background: #f8efd4bd;
+  border-radius: 120px 120px 0 0;
+  padding: 20px 10px;
+  min-width: 70%;
+  backdrop-filter: blur(2px);
+}
+.premium-lunar .cover-composition {
+  margin-top: 40px;
+}
+.premium-lantern .cover-names {
+  font-size: 41px;
+}
+.premium-noir .cover-names {
+  font-size: 30px;
+}
+.premium-noir:after {
+  inset: 21px;
+  border: 3px double var(--p-accent);
+}
+.premium-noir .cover-composition {
+  background: #10111599;
+  padding: 18px;
+}
+.premium-lotus .cover-composition {
+  background: radial-gradient(ellipse, #2d132cf5, transparent 80%);
+  padding: 15px;
+}
+.premium-velvet .cover-composition {
+  text-shadow: 0 2px 14px #1d061a;
+}
+.premium-velvet .cover-names {
+  font-size: 43px;
+}
+.premium-lotus .cover-names {
+  font-size: 39px;
+}
+/* A finite set of original scene primitives, animated only after explicit activation. */
+.scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+}
+.scene > div,
+.scene > span,
+.scene > svg {
+  position: absolute;
+}
+.curtain {
+  top: 0;
+  bottom: 0;
+  width: 51%;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--p-shadow) 0%,
+    var(--p-fabric) 9%,
+    var(--p-shadow) 18%,
+    var(--p-fabric) 27%
+  );
+  box-shadow: inset -15px 0 30px #0005;
+  transform-origin: top;
+  z-index: 2;
+}
+.curtain-left {
+  left: 0;
+  border-radius: 0 0 48% 0;
+}
+.curtain-right {
+  right: 0;
+  border-radius: 0 0 0 48%;
+  box-shadow: inset 15px 0 30px #0005;
+}
+.curtain i {
+  position: absolute;
+  top: 67%;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #856030, #e7c68a, #856030);
+  box-shadow: 0 3px 5px #0007;
+}
+.curtain b {
+  position: absolute;
+  top: 67%;
+  width: 8px;
+  height: 40px;
+  background: #cfaa61;
+  left: 75%;
+  border-radius: 0 0 5px 5px;
+}
+.curtain-right b {
+  left: 25%;
+}
+.curtain-valance {
+  z-index: 3;
+  top: -8%;
+  left: -5%;
+  width: 110%;
+  height: 25%;
+  border-radius: 0 0 50% 50%;
+  background: repeating-linear-gradient(
+    100deg,
+    var(--p-fabric),
+    var(--p-shadow) 9%,
+    var(--p-fabric) 18%
+  );
+  border-bottom: 3px solid var(--p-accent);
+  box-shadow: 0 15px 35px #0005;
+}
+.stage-footlights {
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  bottom: 3%;
+  background: linear-gradient(90deg, transparent, var(--p-accent), transparent);
+  box-shadow: 0 -12px 65px 15px #d6b67c30;
+}
+.night-stars {
+  inset: 0;
+  background-image:
+    radial-gradient(circle, #fff 1px, transparent 1.5px),
+    radial-gradient(circle, #dbe5ff 1px, transparent 1.5px);
+  background-size:
+    113px 139px,
+    187px 201px;
+  background-position:
+    20px 30px,
+    90px 70px;
+  opacity: 0.38;
+}
+.silver-moon {
+  height: 24%;
+  aspect-ratio: 1;
+  top: 9%;
+  left: calc(50% - 12%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 33% 29%,
+    #f8fbff,
+    #cbd8ed 45%,
+    #7f95bc 75%,
+    #415a87
+  );
+  box-shadow:
+    0 0 45px #ccd9ff55,
+    0 0 130px #9eb9fc22;
+  z-index: 1;
+}
+.silver-moon:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 40%, #647b9e33 0 9%, transparent 10%),
+    radial-gradient(circle at 62% 30%, #6e85a344 0 6%, transparent 7%),
+    radial-gradient(circle at 65% 67%, #5e729030 0 10%, transparent 11%);
+}
+.moon-orbit {
+  width: 95%;
+  aspect-ratio: 1;
+  left: 2.5%;
+  top: 10%;
+  border: 1px solid #bbcfff33;
+  border-radius: 50%;
+  transform: rotateX(40deg) rotate(-20deg);
+}
+.moon-beam {
+  top: 5%;
+  left: 20%;
+  width: 60%;
+  height: 110%;
+  background: linear-gradient(180deg, #cee0ff38, transparent);
+  clip-path: polygon(40% 0, 60% 0, 100% 100%, 0 100%);
+  filter: blur(10px);
+  transform-origin: 50% 0;
+  opacity: 0.35;
+}
+.night-horizon {
+  bottom: -20%;
+  left: -30%;
+  width: 160%;
+  height: 40%;
+  border-radius: 50%;
+  background: #050e22;
+  border-top: 1px solid #adbee466;
+}
+.sun-rays {
+  inset: -50%;
+  background: repeating-conic-gradient(
+    from -80deg at 50% 65%,
+    #ffbd6920 0deg 5deg,
+    transparent 5deg 20deg
+  );
+  opacity: 0.6;
+}
+.rising-sun {
+  width: 55%;
+  aspect-ratio: 1;
+  left: 22.5%;
+  top: 26%;
+  border-radius: 50%;
+  background: linear-gradient(#ffe3a7, #e8995a);
+  box-shadow: 0 0 90px #ffae5a4d;
+}
+.sun-hill {
+  width: 140%;
+  height: 42%;
+  border-radius: 50% 50% 0 0;
+  bottom: -10%;
+  left: -30%;
+  background: #9d4b31;
+  transform: rotate(-8deg);
+}
+.hill-front {
+  left: -10%;
+  bottom: -25%;
+  height: 49%;
+  background: #60332b;
+  transform: rotate(10deg);
+}
+.portal-light {
+  inset: 8% 16% 0;
+  border-radius: 50% 50% 0 0;
+  background: radial-gradient(ellipse at top, #f5d67d55, transparent 70%);
+}
+.portal-frame {
+  inset: 9% 14% 0;
+  border: 5px double var(--p-accent);
+  border-radius: 50% 50% 0 0;
+  box-shadow:
+    0 0 0 14px var(--p-bg),
+    0 0 0 15px var(--p-line);
+}
+.portal-door {
+  top: 9%;
+  bottom: 0;
+  width: 36%;
+  background: linear-gradient(100deg, var(--p-fabric), var(--p-bg));
+  border: 1px solid var(--p-accent);
+  z-index: 2;
+  backface-visibility: hidden;
+}
+.door-left {
+  left: 14%;
+  transform-origin: left center;
+  border-radius: 100% 0 0 0;
+}
+.door-right {
+  right: 14%;
+  transform-origin: right center;
+  border-radius: 0 100% 0 0;
+}
+.portal-door i {
+  position: absolute;
+  inset: 15% 15% 8%;
+  border: 3px double var(--p-accent);
+  border-radius: 100px 100px 0 0;
+  opacity: 0.55;
+}
+.portal-door b {
+  position: absolute;
+  top: 65%;
+  right: 10%;
+  width: 8px;
+  height: 32px;
+  border: 2px solid var(--p-accent);
+  border-radius: 50%;
+}
+.door-right b {
+  right: auto;
+  left: 10%;
+}
+.portal-door span {
+  position: absolute;
+  inset: 12px;
+  opacity: 0.16;
+  background: repeating-conic-gradient(
+    var(--p-accent) 0 90deg,
+    transparent 90deg 180deg
+  );
+  background-size: 22px 22px;
+  mix-blend-mode: screen;
+}
+.scene-shutters {
+  perspective: 900px;
+}
+.scene-shutters .portal-door {
+  background: repeating-linear-gradient(0deg, #425b96 0 9px, #6e85ba 10px 21px);
+  border: 5px solid #3e558b;
+  box-shadow: inset 0 0 0 2px #95a5cf;
+}
+.scene-shutters .portal-door span {
+  background: none;
+  border: 2px solid #a5b4db;
+  inset: 8px;
+  opacity: 0.5;
+}
+.scene-shutters .portal-door i {
+  inset: 40% 0 0;
+  border-radius: 0;
+  border: 0;
+  border-top: 7px solid #344f83;
+  opacity: 1;
+}
+.scene-shutters .portal-frame {
+  border-color: #667eb8;
+  border-width: 8px;
+  box-shadow:
+    0 0 0 12px #e7d5a1,
+    0 0 0 14px #667eb8;
+}
+.scene-shutters .portal-light {
+  background: radial-gradient(
+    ellipse at top,
+    #fff8cb,
+    #f3d786aa 50%,
+    transparent 80%
+  );
+}
+.scene-gates {
+  perspective: 1200px;
+}
+.envelope-body {
+  left: 8%;
+  right: 8%;
+  bottom: 13%;
+  height: 48%;
+  background: linear-gradient(150deg, #e8e0d1, #cdbfa8);
+  clip-path: polygon(0 0, 50% 45%, 100% 0, 100% 100%, 0 100%);
+  box-shadow: 0 20px 30px #0002;
+  z-index: 2;
+}
+.envelope-flap {
+  left: 8%;
+  right: 8%;
+  top: 39%;
+  height: 36%;
+  background: linear-gradient(170deg, #f5eee3, #d0c2aa);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: 50% 0;
+  z-index: 3;
+  filter: drop-shadow(0 4px 3px #0003);
+}
+.letter-sheet {
+  left: 15%;
+  right: 15%;
+  top: 30%;
+  height: 50%;
+  background: #fffaf0;
+  box-shadow: 0 10px 40px #51412c33;
+  z-index: 1;
+  border: 1px solid #d7c9b2;
+}
+.wax-seal {
+  width: 15%;
+  aspect-ratio: 1;
+  top: 60%;
+  left: 42.5%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #c0a06e, #967344);
+  border: 3px double #dec59b;
+  color: #ffedcc;
+  font:
+    italic 30px "Cormorant Garamond",
+    serif;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 8px #0003;
+  z-index: 4;
+}
+.deco-sunburst {
+  inset: -50%;
+  background: repeating-conic-gradient(
+    from 0deg,
+    var(--p-accent) 0 0.3deg,
+    transparent 0.3deg 9deg
+  );
+  opacity: 0.2;
+}
+.aperture-blade {
+  inset: -30%;
+  background: linear-gradient(calc(var(--i) * 45deg), #0b0c11 30%, #25232a 85%);
+  clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+  transform: rotate(calc(var(--i) * 45deg));
+  border: 1px solid #d4b97944;
+  z-index: 1;
+}
+.deco-diamond {
+  width: 72%;
+  aspect-ratio: 1;
+  left: 14%;
+  top: 20%;
+  transform: rotate(45deg);
+  border: 4px double #d2b37180;
+  z-index: 2;
+}
+.lotus-halo {
+  height: 70%;
+  aspect-ratio: 1;
+  left: 50%;
+  top: 14%;
+  transform: translateX(-50%);
+  border: 1px solid #d7a08855;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 25px #d7a0880a,
+    0 0 0 26px #d7a08822;
+}
+.lotus-petal {
+  height: 48%;
+  width: 36%;
+  left: 32%;
+  top: 30%;
+  background: linear-gradient(0deg, #4c2040, #bf7a8044, #e2ac8f99);
+  border: 1px solid #dcad8b66;
+  border-radius: 90% 10% 75% 25%;
+  transform-origin: 50% 85%;
+  transform: rotate(calc((var(--i) - 3.5) * 25deg));
+  z-index: 1;
+}
+.lotus-heart {
+  width: 14%;
+  aspect-ratio: 1;
+  top: 60%;
+  left: 43%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f5d0a3, #bc7f5e00 75%);
+  box-shadow: 0 0 50px #e9be8944;
+  z-index: 2;
+}
+.ocean-sun {
+  width: 38%;
+  aspect-ratio: 1;
+  left: 31%;
+  top: 18%;
+  border-radius: 50%;
+  background: linear-gradient(#f7c6aa, #ef8f7e);
+  box-shadow: 0 0 80px #f2a49122;
+}
+.tide-wave {
+  bottom: -5%;
+  left: -10%;
+  width: 120%;
+  height: 50%;
+  fill: #1e5869;
+  z-index: 1;
+}
+.wave-two {
+  fill: #154454;
+  bottom: -15%;
+  z-index: 2;
+}
+.wave-three {
+  fill: #092c3d;
+  bottom: -25%;
+  z-index: 3;
+}
+.prism-glow {
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 35%, #9b76c8aa, transparent 65%);
+}
+.crystal-facet {
+  width: 65%;
+  height: 75%;
+  left: 17.5%;
+  top: 12.5%;
+  background: linear-gradient(
+    calc(var(--i) * 60deg),
+    #d6bbff05,
+    #cbb6ff55,
+    #652e9a22
+  );
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  transform: rotate(calc(var(--i) * 60deg));
+  border: 1px solid #dfcdff77;
+  z-index: 1;
+}
+.prism-star {
+  font:
+    100px "Cormorant Garamond",
+    serif;
+  top: 20%;
+  left: 40%;
+  color: #e1cfff55;
+  z-index: 2;
+}
+.lantern-moon {
+  width: 30%;
+  aspect-ratio: 1;
+  top: 10%;
+  left: 35%;
+  border-radius: 50%;
+  box-shadow: inset 12px -8px #f4d69d88;
+  transform: rotate(-20deg);
+}
+.floating-lantern {
+  width: 10%;
+  height: 13%;
+  left: calc(8% + var(--i) * 18%);
+  top: calc(18% + mod(var(--i), 3) * 18%);
+  border: 1px solid #e4be76;
+  background: radial-gradient(ellipse, #ffdcaeaa, #c18b5d44);
+  border-radius: 35% 35% 40% 40%;
+  box-shadow: 0 0 35px #e4bb6633;
+  transform: rotate(calc((var(--i) - 2) * 5deg));
+  z-index: 1;
+}
+.floating-lantern:before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 10%;
+  background: #b1834e;
+  left: 15%;
+  top: -4%;
+  border: 1px solid #e4be76;
+}
+.floating-lantern i {
+  position: absolute;
+  inset: 0;
+  border: 1px solid #e4be7655;
+  border-radius: 50%;
+}
+.floating-lantern span {
+  position: absolute;
+  left: 49%;
+  height: 26%;
+  width: 1px;
+  top: 100%;
+  background: #d4ac69;
+}
+.silk-grid {
+  inset: 0;
+  background:
+    repeating-linear-gradient(90deg, #c9a3650a 0 1px, transparent 1px 6px),
+    repeating-linear-gradient(0deg, #c9a3650a 0 1px, transparent 1px 6px);
+}
+.silk-ribbon {
+  width: 21%;
+  height: 145%;
+  left: calc(-10% + var(--i) * 21%);
+  top: -22%;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 2px, #e0955720 2px 3px),
+    linear-gradient(90deg, #47171b, #a3422e 45%, #70211f 75%, #ba5b36);
+  border-inline: 2px solid #d3a26055;
+  box-shadow: 5px 0 15px #0004;
+  transform: rotate(-12deg);
+  z-index: 1;
+}
+.silk-ribbon:nth-child(even) {
+  transform: rotate(12deg);
+  z-index: 2;
+}
+.brass-medallion {
+  width: 22%;
+  aspect-ratio: 1;
+  top: 40%;
+  left: 39%;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 4px double #e7c486;
+  background: radial-gradient(circle, #b58a4b, #76562e);
+  color: #ffe8b4;
+  font-size: 45px;
+  box-shadow: 0 10px 35px #0006;
+  z-index: 3;
+}
+.collection-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.collection-tabs button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #dddccd;
+  border-radius: 4px;
+  padding: 12px 17px;
+  background: transparent;
+  font-size: 11px;
+  color: #52624a;
+  cursor: pointer;
+}
+.collection-tabs button[aria-pressed="true"] {
+  background: #292635;
+  color: #faf0d9;
+  border-color: #292635;
+}
+.collection-tabs button small {
+  font-size: 9px;
+  opacity: 0.7;
+}
+.premium-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 8px;
+  letter-spacing: 1.6px;
+  color: #94723c;
+  margin-top: 15px;
+}
+.premium-card-badge:before {
+  content: "✧";
+  font-size: 15px;
+}
+.gallery-content .premium-card-badge + .design-meta {
+  margin-top: 7px;
+}
+.collection-note {
+  max-width: 640px;
+  font-size: 11px;
+  color: #787669;
+  line-height: 1.9;
+  margin: -12px auto 30px;
+  text-align: center;
+}
+.premium-featured-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #735c3d;
+  font-size: 10px;
+  margin-top: 20px;
+  border-bottom: 1px solid #c5b18c;
+  padding-bottom: 5px;
+}
+@media (max-width: 760px) {
+  .collection-tabs {
+    gap: 7px;
+  }
+  .collection-tabs button {
+    padding: 12px;
+    font-size: 10px;
+    gap: 8px;
+  }
+  .collection-tabs button small {
+    font-size: 8px;
+  }
+  .collection-note {
+    font-size: 10px;
+    margin-top: 0;
+  }
+  .premium-cover {
+    padding-top: 35px;
+  }
+  .premium-cover .cover-names {
+    font-size: 48px;
+  }
+  .premium-palace .cover-names,
+  .premium-silk .cover-names {
+    font-size: 34px;
+  }
+  .premium-crystal .cover-names {
+    font-size: 75px;
+  }
+  .premium-letter .cover-names {
+    font-size: 51px;
+  }
+  .premium-ocean .cover-names {
+    font-size: 44px;
+  }
+  .premium-lantern .cover-names {
+    font-size: 51px;
+  }
+  .premium-cover .cover-edition {
+    font-size: 7px;
+  }
+  .premium-cover .cover-date {
+    font-size: 7px;
+  }
+  .premium-cover .cover-bottom {
+    font-size: 6px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .premium-cover {
+    transition: none;
+  }
+  .gallery-art-link:hover .premium-cover {
+    transform: none;
+  }
+}
+
+/* Fine metal lattice stays inside the arched gate rather than a filled tile pattern. */
+.scene-gates .portal-door {
+  overflow: hidden;
+}
+.scene-gates .portal-door span {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0 16px,
+      #d2b35c 16px 17px,
+      transparent 17px 33px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0 16px,
+      #d2b35c 16px 17px,
+      transparent 17px 33px
+    );
+  background-size: auto;
+  opacity: 0.22;
+  mix-blend-mode: normal;
+}
+/* Launch contrast fixes for gallery collection labels. */
+.collection-tabs button small { opacity: 1; font-size: 12px; }
+.collection-note { color: #53614c; font-size: 12px; }
+.premium-card-badge { color: #795a2d; }

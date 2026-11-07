@@ -1,0 +1,22 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "online-invites",
+  "account_id": "fbfcbbe2b25daac633ab03d066f27afe",
+  "pages_build_output_dir": "../../dist",
+  "compatibility_date": "2026-10-01",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "online-invites-production",
+      "database_id": "29a36a75-0d67-434c-9e80-06f5377c1a1a",
+      "migrations_dir": "../../migrations"
+    }
+  ],
+  "vars": {
+    "APP_MODE": "production",
+    "SUBMISSIONS_ENABLED": "false",
+    "POLICIES_APPROVED": "true",
+    "TURNSTILE_SITE_KEY": "0x4AAAAAAF39az-T1rpEe2hS",
+    "ALLOWED_HOSTNAMES": "onlineinvites.in,www.onlineinvites.in,online-invites.pages.dev"
+  }
+}

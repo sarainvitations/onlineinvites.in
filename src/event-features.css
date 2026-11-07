@@ -1,0 +1,40 @@
+.event-countdown, .rsvp-section { color: var(--p-ink, var(--theme-ink, #194f3e)); background: var(--p-bg, var(--paper, #fcfaf5)); padding: 75px max(24px, 8%); text-align: center; }
+.event-feature-kicker { display: block; font: 600 12px/1.6 "DM Sans", sans-serif; letter-spacing: 2px; margin-bottom: 18px; }
+.event-countdown h2, .rsvp-intro h2 { font-family: var(--p-font, var(--theme-font, var(--serif))); font-size: clamp(34px, 4.5vw, 60px); line-height: 1.15; }
+.event-countdown p, .rsvp-intro > p { color: inherit; font: 15px/1.8 "DM Sans", sans-serif; margin-top: 16px; }
+.countdown-digits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 620px; margin: 35px auto 25px; }
+.countdown-digits > div { border: 1px solid currentColor; border-radius: 12px; padding: 22px 8px; min-width: 0; }
+.countdown-digits strong { display: block; font: 500 clamp(34px, 5vw, 64px)/1.1 var(--p-font, var(--theme-font, var(--serif))); font-variant-numeric: tabular-nums; }
+.countdown-digits span { display: block; font: 12px/1.6 "DM Sans", sans-serif; text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; }
+.event-countdown .event-feature-note { font-size: 12px; }
+.rsvp-panel { max-width: 760px; margin: 30px auto 0; padding: 32px; background: #fcfaf5; color: #263d32; border-radius: 16px; text-align: left; font-family: "DM Sans", sans-serif; }
+.rsvp-panel p { color: #465346; font: 14px/1.8 "DM Sans", sans-serif; }
+.rsvp-mode-note { padding-bottom: 22px; margin-bottom: 25px; border-bottom: 1px solid #d5dacd; }
+.rsvp-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; border: 0; padding: 0; margin: 0; min-width: 0; }
+.rsvp-fields > div, .rsvp-fields > fieldset { min-width: 0; }
+.rsvp-fields label, .rsvp-attendance legend { font: 600 14px/1.6 "DM Sans", sans-serif; display: block; margin-bottom: 8px; }
+.rsvp-fields label span, .rsvp-fields small { font-size: 12px; font-weight: 400; }
+.rsvp-fields input:not([type=radio],[type=checkbox]), .rsvp-fields textarea { width: 100%; font: 16px/1.5 "DM Sans", sans-serif; color: #263d32; background: white; border: 1px solid #89967f; border-radius: 6px; padding: 12px; min-height: 48px; }
+.rsvp-fields textarea { resize: vertical; }
+.rsvp-wide, .rsvp-attendance { grid-column: 1 / -1; }
+.rsvp-attendance { border: 0; margin: 0; padding: 0; }
+.rsvp-attendance > div { display: flex; flex-wrap: wrap; gap: 12px; }
+.rsvp-attendance label { display: flex; gap: 10px; align-items: center; border: 1px solid #89967f; padding: 12px; border-radius: 6px; font-weight: 400; margin: 0; min-height: 48px; }
+.rsvp-fields input[type=radio], .rsvp-fields input[type=checkbox] { width: 18px; height: 18px; flex: 0 0 18px; accent-color: #194f3e; }
+.rsvp-consent > label { display: flex; align-items: flex-start; gap: 10px; font-weight: 400; }
+.rsvp-consent input { margin-top: 3px; }
+.rsvp-panel a { color: #194f3e; text-decoration: underline; text-underline-offset: 3px; }
+.rsvp-submit { border: 1px solid #194f3e; border-radius: 6px; padding: 14px 24px; min-height: 48px; background: #194f3e; color: white; margin-top: 24px; font: 600 14px/1.5 "DM Sans", sans-serif; cursor: pointer; }
+.rsvp-submit:disabled { cursor: wait; background: #56664c; }
+.rsvp-panel :is(input,textarea,button,a,fieldset):focus-visible { outline: 3px solid #83642d; outline-offset: 3px; }
+.rsvp-errors { border-left: 3px solid #923b30; background: #f8ede7; padding: 18px; margin-bottom: 24px; }
+.rsvp-errors a { display: block; margin-top: 7px; font-size: 14px; }
+.rsvp-panel .rsvp-field-error { color: #923b30; margin-top: 8px; }
+.rsvp-panel [aria-invalid=true] { border-color: #923b30; }
+.rsvp-receipt h3 { font: 500 30px/1.2 var(--serif); margin-bottom: 18px; }
+.rsvp-receipt strong { display: block; overflow-wrap: anywhere; font-size: 14px; margin: 20px 0; }
+.rsvp-panel .quote-turnstile { margin-top: 24px; }
+.rsvp-panel .quote-turnstile > strong, .rsvp-panel .quote-turnstile small { display: block; font-size: 13px; margin-bottom: 10px; }
+.rsvp-panel .quote-turnstile > small { margin-top: 12px; }
+@media (max-width: 600px) { .event-countdown, .rsvp-section { padding: 50px 20px; } .countdown-digits { gap: 8px; } .countdown-digits > div { padding: 18px 3px; border-radius: 8px; } .countdown-digits strong { font-size: 32px; } .countdown-digits span { font-size: 10px; letter-spacing: 0; } .rsvp-panel { padding: 22px 18px; } .rsvp-fields { grid-template-columns: 1fr; gap: 20px; } .rsvp-submit { width: 100%; } }
+.rsvp-panel .quote-turnstile button { font: inherit; color: #194f3e; border: 0; background: transparent; text-decoration: underline; cursor: pointer; padding: 5px; }

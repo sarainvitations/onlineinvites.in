@@ -1,0 +1,317 @@
+.design-carousel {
+  scroll-margin-top: 25px;
+  min-width: 0;
+}
+.carousel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin: 0 0 22px;
+}
+.carousel-heading .eyebrow {
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+.carousel-heading p {
+  font-size: 11px;
+  margin-top: 7px;
+}
+.carousel-controls {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.carousel-controls button {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d6ddca;
+  border-radius: 50%;
+  color: #234c3b;
+  background: #fcfaf5;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.carousel-controls button:hover:not(:disabled) {
+  background: #194f3e;
+  color: #fff;
+}
+.carousel-controls button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.carousel-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 48px) / 3);
+  gap: 24px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 5px 0 12px;
+  outline-offset: 5px;
+  position: relative;
+  align-items: start;
+}
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+.carousel-slide {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-width: 0;
+  position: relative;
+}
+.carousel-track .gallery-art-link {
+  height: 330px;
+}
+.carousel-track .premium-card-badge {
+  min-height: 22px;
+  margin-top: 10px;
+  font-size: 7px;
+  letter-spacing: 1px;
+  line-height: 1.6;
+}
+.carousel-track .design-meta {
+  margin-top: 17px;
+  gap: 12px;
+}
+.carousel-track .premium-card-badge + .design-meta {
+  margin-top: 4px;
+}
+.carousel-track .design-meta h2 {
+  font-size: 25px;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+.carousel-track .design-meta > div {
+  min-width: 0;
+}
+.carousel-track .design-meta > div > span {
+  font-size: 7px;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  display: block;
+}
+.carousel-track .design-meta > a {
+  flex-shrink: 0;
+  width: 37px;
+  height: 37px;
+}
+.carousel-track .design-description {
+  font-size: 10px;
+  margin-top: 10px;
+  line-height: 1.8;
+  max-width: none;
+}
+.carousel-track .gallery-art-link .template-art {
+  width: 190px;
+}
+.carousel-track .cover-names {
+  font-size: 31px;
+}
+.carousel-track .premium-velvet .cover-names {
+  font-size: 37px;
+}
+.carousel-track .premium-crystal .cover-names {
+  font-size: 55px;
+}
+.carousel-track .premium-palace .cover-names,
+.carousel-track .premium-silk .cover-names {
+  font-size: 25px;
+}
+.carousel-track .premium-ocean .cover-names {
+  font-size: 33px;
+}
+.carousel-track .premium-provence .cover-names {
+  font-size: 30px;
+}
+.carousel-track .premium-cover {
+  padding-top: 23px;
+}
+.carousel-track .premium-cover .cover-bottom {
+  font-size: 4px;
+  letter-spacing: 0.8px;
+}
+.carousel-footer {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 24px;
+}
+.carousel-progress {
+  flex: 1;
+  height: 2px;
+  background: #e1e5d8;
+  position: relative;
+  overflow: hidden;
+}
+.carousel-progress > span {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: #738264;
+  transition:
+    left 0.25s,
+    width 0.25s;
+}
+.carousel-position {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #53614c;
+  min-width: 65px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.gallery-content .filter-chips {
+  margin-bottom: 25px;
+}
+.gallery-content {
+  padding-bottom: 40px;
+}
+.gallery-page .page-intro {
+  padding-top: 48px;
+  padding-bottom: 34px;
+}
+.gallery-page .page-intro h1 {
+  font-size: 65px;
+}
+.gallery-page .page-intro .demo-disclaimer {
+  margin-top: 15px;
+}
+@media (max-width: 1050px) and (min-width: 761px) {
+  .carousel-track {
+    grid-auto-columns: calc((100% - 24px) / 2);
+  }
+}
+@media (max-width: 760px) {
+  .carousel-track {
+    grid-auto-columns: 100%;
+    gap: 20px;
+    padding-top: 5px;
+  }
+  .carousel-heading {
+    gap: 15px;
+    margin-bottom: 18px;
+    align-items: end;
+  }
+  .carousel-heading .eyebrow {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+  .carousel-heading p {
+    font-size: 10px;
+    line-height: 1.7;
+    max-width: 240px;
+  }
+  .carousel-controls {
+    gap: 7px;
+  }
+  .carousel-controls button {
+    width: 36px;
+    height: 36px;
+  }
+  .carousel-controls svg {
+    width: 16px;
+  }
+  .carousel-track .gallery-art-link {
+    height: 350px;
+  }
+  .carousel-track .gallery-art-link .template-art {
+    width: 205px;
+  }
+  .carousel-track .design-meta h2 {
+    font-size: 27px;
+  }
+  .carousel-track .design-meta > div > span {
+    font-size: 8px;
+  }
+  .carousel-track .design-description {
+    font-size: 11px;
+  }
+  .carousel-track .premium-card-badge {
+    font-size: 8px;
+    min-height: 24px;
+  }
+  .carousel-track .premium-cover .cover-names {
+    font-size: 41px;
+  }
+  .carousel-track .premium-crystal .cover-names {
+    font-size: 65px;
+  }
+  .carousel-track .premium-palace .cover-names,
+  .carousel-track .premium-silk .cover-names {
+    font-size: 29px;
+  }
+  .carousel-track .premium-cover .cover-bottom {
+    font-size: 5px;
+  }
+  .carousel-track .premium-provence .cover-names {
+    font-size: 36px;
+  }
+  .carousel-footer {
+    margin-top: 17px;
+    gap: 18px;
+  }
+  .carousel-position {
+    font-size: 9px;
+    min-width: 55px;
+  }
+  .gallery-page .page-intro {
+    padding-top: 35px;
+    padding-bottom: 27px;
+  }
+  .gallery-page .page-intro h1 {
+    font-size: 52px;
+  }
+  .gallery-page .collection-note {
+    font-size: 10px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+  }
+}
+@media (max-width: 380px) {
+  .carousel-heading .eyebrow {
+    font-size: 6px;
+  }
+  .carousel-controls {
+    gap: 6px;
+  }
+  .carousel-controls button {
+    width: 33px;
+    height: 33px;
+  }
+  .carousel-heading p {
+    font-size: 9px;
+  }
+  .carousel-track .gallery-art-link {
+    height: 320px;
+  }
+  .carousel-track .premium-cover .cover-names {
+    font-size: 35px;
+  }
+  .carousel-track .premium-crystal .cover-names {
+    font-size: 55px;
+  }
+  .carousel-track .premium-palace .cover-names,
+  .carousel-track .premium-silk .cover-names {
+    font-size: 25px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .carousel-controls button,
+  .carousel-progress > span {
+    transition: none;
+  }
+}
+.carousel-heading .eyebrow, .carousel-position, .design-description, .design-meta > div > span, .premium-card-badge { font-size: 12px; }
+.design-meta, .design-description { overflow-wrap: anywhere; }
+.carousel-track .premium-card-badge, .carousel-track .design-meta > div > span { font-size: 12px; }
+
+.carousel-track .premium-card-badge { background: #fcfaf5; color: #65491f; padding: 2px 7px; border-radius: 4px; }
+.carousel-track .basic-card-badge { color: #36523b; }

@@ -1,0 +1,46 @@
+{
+  "name": "online-invites",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "npm run typecheck && vite build && node scripts/build-seo.mjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.server.json",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "dev:cloudflare": "npm run build && wrangler pages dev dist --ip 127.0.0.1 --port 8788",
+    "db:migrate:local": "wrangler d1 migrations apply DB --local",
+    "enquiries:list": "node scripts/read-enquiries.mjs",
+    "test:backend": "playwright test tests/backend.spec.ts --project=desktop",
+    "rsvps:list": "node scripts/read-rsvps.mjs",
+    "rsvps:summary": "node scripts/read-rsvps.mjs --summary",
+    "db:migrate:production": "wrangler d1 migrations apply DB --remote --config cloudflare/production/wrangler.jsonc",
+    "db:status:production": "wrangler d1 migrations list DB --remote --config cloudflare/production/wrangler.jsonc"
+  },
+  "dependencies": {
+    "lucide-react": "^0.468.0",
+    "motion": "^12.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.18.5"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261030.1",
+    "@playwright/test": "^1.64.1",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "autoprefixer": "^10.4.20",
+    "miniflare": "^5.20261023.3-beta",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2",
+    "vite": "^8.3.5",
+    "wrangler": "^4.156.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

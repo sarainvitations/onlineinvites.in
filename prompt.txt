@@ -1,0 +1,499 @@
+# Online Invites — Updated Codex Development Prompt
+
+## Project objective
+
+Build a production-quality, mobile-first digital invitation business website called **Online Invites**.
+
+**Domain:** `onlineinvites.in`  
+**Tagline:** Every Celebration Deserves a Beautiful Invitation.
+
+The platform will offer beautiful, animated, customizable digital invitations for weddings, Nikah, Walima, engagements, Aqiqah, birthdays, anniversaries, Griha Pravesh, Puja, housewarming and other celebrations.
+
+The business follows a **quotation-first model**, not direct checkout.
+
+Customers browse invitation demos, submit their requirements, receive a personalized quotation, approve it, and pay upfront before development begins.
+
+The first preview will be delivered within three working days after payment confirmation and receipt of complete requirements.
+
+## 1. Technology stack
+
+Use:
+
+- React with TypeScript
+- Vite
+- Tailwind CSS
+- Motion for React for animations
+- React Router for navigation
+- Lucide React for icons
+- Cloudflare Pages for frontend hosting
+- Cloudflare Pages Functions for backend APIs
+- Cloudflare D1 for enquiry storage
+- Cloudflare Turnstile for spam protection
+- Cloudflare Email Routing for incoming business email forwarding
+- Wrangler for local Cloudflare development and deployment
+
+Do not use Netlify, Firebase, Supabase or a separate paid backend for the MVP.
+
+Keep the application modular, accessible, SEO-friendly and easy to extend.
+
+## 2. Design direction
+
+Create a premium, contemporary invitation design studio website.
+
+The website should feel elegant and trustworthy, not like a generic e-commerce template.
+
+Use:
+
+- Sophisticated typography
+- Warm ivory or off-white backgrounds
+- Deep charcoal text
+- Emerald, champagne gold and muted accent colors
+- Subtle gradients
+- Soft shadows
+- Elegant cards
+- Generous spacing
+- Smooth transitions
+- Scroll-triggered animations
+- Micro-interactions
+- Responsive layouts
+
+Avoid excessive animations, distracting effects and large JavaScript bundles.
+
+Support reduced-motion accessibility preferences.
+
+## 3. Website pages
+
+### Homepage
+
+Build a polished landing page containing:
+
+1. Responsive navigation with logo and quotation CTA.
+2. Animated hero section with the headline "Beautiful Invitations for Every Celebration."
+3. Starting price: ₹499.
+4. Animated invitation previews.
+5. Occasion categories.
+6. Featured templates.
+7. How It Works section.
+8. Pricing overview.
+9. Custom domains and hosting options.
+10. FAQ section.
+11. Contact section.
+12. Footer with privacy policy and terms links.
+
+Primary CTA: **Request a Free Quote**
+
+Secondary CTA: **Explore Designs**
+
+### Invitation gallery
+
+Create a searchable and filterable template gallery.
+
+Initial categories:
+
+- Wedding
+- Nikah
+- Walima
+- Engagement
+- Aqiqah
+- Birthday
+- Anniversary
+- Griha Pravesh
+- Puja
+- Housewarming
+- Other Celebrations
+
+Create at least six original, visually distinct interactive demonstration invitations.
+
+Each demonstration should include a polished opening animation, scrollable invitation layout, event details and a venue section.
+
+Use fictional customer names and sample event information.
+
+Templates must work beautifully on mobile devices.
+
+### Template preview
+
+Each template should have a dedicated preview route.
+
+Include:
+
+- Full invitation experience
+- Opening animation
+- Smooth scrolling
+- Theme-specific typography
+- Event date and time
+- Venue details
+- Sample Google Maps link
+- Responsive layout
+- Request Similar Design CTA
+
+Avoid copyrighted audio, images and fonts without appropriate licenses.
+
+### Pricing page
+
+Display indicative starting prices:
+
+**Basic — Starting ₹499**
+
+- Template-based invitation
+- Opening animation
+- Responsive scrollable design
+- Event details
+- Venue map link
+- Standard invitation URL
+- 30 days of hosting
+- Two correction rounds
+
+**Premium — Starting ₹1,499**
+
+- More advanced animation
+- Greater design customization
+- Multiple event sections
+- Optional gallery, countdown and audio
+- Four correction rounds
+
+**Custom — Starting ₹2,999**
+
+- Bespoke invitation experience
+- Advanced visual customization
+- Custom fonts and layouts
+- Additional interactive features
+- Flexible revisions within agreed scope
+
+Clearly explain that final prices are provided through individual quotations.
+
+### Hosting pricing
+
+Include:
+
+- First 30 days included
+- Additional hosting at ₹10/day
+- Hosting duration selected before quotation
+- Charges paid upfront
+- Hosting begins on the agreed publication date
+- Extensions subject to confirmation and advance payment
+
+The ₹10/day rate should be configurable rather than hardcoded throughout the application.
+
+Support the following hosting preferences:
+
+1. Standard invitation URL
+2. Personalized subdomain under onlineinvites.in
+3. Customer-owned custom domain
+4. New custom domain registration
+
+Do not assume all domain or subdomain requests can be provisioned automatically.
+
+Domain registration, DNS setup, SSL and renewals must be reviewed and quoted individually.
+
+## 4. Quotation request form
+
+Build a beautiful, responsive, multi-step quotation form.
+
+Collect:
+
+**Customer information**
+- Full name
+- Email address
+- WhatsApp number (optional, with country code)
+- Preferred contact method
+
+**Event information**
+- Occasion
+- Event date
+- Preferred invitation publication date
+- Language preferences
+- Number of events/functions
+
+**Design preferences**
+- Selected template, if any
+- Template-based or custom design
+- Preferred colors
+- Optional hex color values
+- Typography preferences
+- Animation preferences
+- Optional reference URLs
+- Special instructions
+
+**Additional features**
+- Background audio
+- Photo gallery
+- Countdown
+- RSVP
+- Multiple languages
+- Multiple functions
+- Additional animation
+- Other custom requirements
+
+**Hosting**
+- Standard URL
+- Personalized subdomain
+- Existing custom domain
+- New custom domain
+- Requested hosting duration
+
+**Confirmation**
+- Requirements summary
+- Privacy consent
+- Cloudflare Turnstile verification
+- Submit quotation request
+
+Do not collect payment during form submission.
+
+After successful submission, display a unique enquiry reference and confirmation message.
+
+## 5. Backend architecture
+
+Use Cloudflare Pages Functions.
+
+Create an endpoint such as:
+
+`POST /api/enquiries`
+
+The endpoint must:
+
+1. Validate incoming data server-side.
+2. Enforce request-size and field-length limits.
+3. Verify the Turnstile token server-side.
+4. Normalize and sanitize user inputs appropriately.
+5. Generate a unique enquiry ID.
+6. Store the enquiry in Cloudflare D1.
+7. Return a safe success response.
+8. Handle failures without exposing sensitive implementation details.
+
+Add appropriate rate limiting and basic duplicate-submission protection.
+
+Never trust frontend validation alone.
+
+Do not expose database credentials, API keys or other secrets in frontend code.
+
+## 6. Cloudflare D1 database
+
+Create an `enquiries` table.
+
+Suggested fields:
+
+- id
+- customer_name
+- email
+- whatsapp
+- occasion
+- event_date
+- publication_date
+- selected_template
+- design_type
+- color_preferences
+- language_preferences
+- requested_features
+- hosting_type
+- hosting_days
+- custom_domain
+- special_requests
+- status
+- created_at
+- updated_at
+
+Use parameterized queries.
+
+Create SQL migrations and provide clear instructions for local and production database setup.
+
+Initial enquiry statuses:
+
+- New
+- Reviewing
+- Quoted
+- Accepted
+- In Progress
+- Preview Sent
+- Completed
+- Cancelled
+
+Do not create a publicly accessible administration API.
+
+## 7. Email integration
+
+Initially, the business owner will use a personal email inbox.
+
+Support the future use of:
+
+`contact@onlineinvites.in`
+
+Cloudflare Email Routing may forward incoming business emails to the personal inbox.
+
+Important: Email Routing is not a transactional outbound email service.
+
+Implement an email-notification abstraction that supports a future transactional email provider.
+
+Do not assume Cloudflare Email Routing can send enquiry notifications.
+
+The application must work correctly even when no outbound email provider is configured.
+
+Every enquiry must be stored successfully in D1 independently of email delivery.
+
+For the MVP, provide a documented method for securely retrieving new enquiries until email notifications are configured.
+
+Do not expose customer information through public endpoints.
+
+## 8. Admin dashboard
+
+Do not build a full administration dashboard in version 1.
+
+However, structure the database and backend so an authenticated admin dashboard can be added later.
+
+Future features may include:
+
+- Enquiry management
+- Quotation generation
+- Payment tracking
+- Invitation delivery tracking
+- Hosting expiration tracking
+- Customer domain management
+
+Do not implement fake authentication or insecure administrative shortcuts.
+
+## 9. Custom domains and subdomains
+
+Keep domain management flexible.
+
+The platform should allow customers to request:
+
+- A standard URL
+- A personalized subdomain
+- Their existing domain
+- A newly purchased domain
+
+Do not automatically provision customer domains in the MVP.
+
+Store the customer's preference in the quotation request.
+
+Actual domain configuration and deployment will initially be handled manually.
+
+Design the codebase so different invitation projects can be hosted independently where required.
+
+Do not force every customer invitation into one shared React application.
+
+## 10. Performance and SEO
+
+Implement:
+
+- Mobile-first responsive design
+- Optimized images
+- Lazy loading
+- Route-based code splitting where appropriate
+- Semantic HTML
+- Accessible form controls
+- Keyboard navigation
+- Reduced-motion support
+- Page metadata
+- Open Graph metadata
+- Sitemap
+- robots.txt
+- Proper canonical URLs
+
+Aim for excellent Lighthouse performance, accessibility and SEO scores.
+
+Do not sacrifice visual quality unnecessarily.
+
+## 11. Legal and operational pages
+
+Create initial pages for:
+
+- Privacy Policy
+- Terms and Conditions
+- Refund and Cancellation Policy
+- Hosting and Expiration Policy
+- Contact
+
+Use clearly marked draft policy text requiring owner review before launch.
+
+Explain that quotations are non-binding until accepted and confirmed.
+
+Clarify revision limits, delivery timelines, customer-provided content responsibilities and domain-renewal responsibilities.
+
+Do not claim the business is legally registered or GST-registered unless configured with verified information.
+
+## 12. Local development
+
+The project must work locally in VS Code.
+
+Provide scripts for:
+
+- Installing dependencies
+- Starting the frontend development server
+- Starting the Cloudflare local runtime
+- Running database migrations locally
+- Running tests
+- Building the production application
+- Deploying to Cloudflare
+
+Use Wrangler and a local D1 database for development.
+
+Include an `.env.example` or equivalent documented configuration file with placeholder values only.
+
+Never commit actual credentials.
+
+Provide clear setup instructions for Turnstile development and production configuration.
+
+## 13. Testing
+
+Implement meaningful tests covering:
+
+- Form validation
+- Required fields
+- Hosting duration calculations
+- Invalid dates
+- Server-side Turnstile verification
+- Successful enquiry persistence
+- Duplicate submissions
+- Database errors
+- Responsive navigation
+- Quotation form interactions
+
+Ensure the project builds successfully.
+
+Do not claim deployment or external integrations are working unless actually tested.
+
+## 14. Deliverables
+
+Create a complete working project, including:
+
+1. React frontend
+2. Responsive homepage
+3. Template gallery
+4. Six interactive invitation demos
+5. Pricing page
+6. Multi-step quotation form
+7. Cloudflare Pages Functions
+8. D1 schema and migrations
+9. Turnstile integration
+10. Legal-policy draft pages
+11. Netlify-independent Cloudflare deployment configuration
+12. README with local setup instructions
+13. Testing instructions
+14. Production deployment checklist
+
+## 15. Implementation instructions for Codex
+
+First inspect the current workspace.
+
+If the project already exists, preserve existing useful components and adapt the architecture rather than replacing everything unnecessarily.
+
+If the workspace is empty, initialize the project using the recommended stack.
+
+Implement the application in logical phases, but do not stop after producing a plan.
+
+Create the actual source files, components, routes, styles, backend handlers, database migrations and configuration.
+
+Use realistic placeholder content without inventing real customers or testimonials.
+
+Ensure that the frontend can be previewed locally even before Cloudflare production credentials are configured.
+
+When finished:
+
+- Run available tests.
+- Run a production build.
+- Fix errors.
+- Summarize implemented functionality.
+- Identify remaining manual configuration steps.
+- Explain how to deploy to Cloudflare Pages.
+
+**Primary goal:** Deliver a polished, functional, quotation-first MVP for Online Invites that is inexpensive to operate, flexible enough for custom customer requirements, and ready for real customer enquiries after production configuration.

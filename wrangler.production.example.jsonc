@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "online-invites",
+  "pages_build_output_dir": "./dist",
+  "compatibility_date": "2026-10-01",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "REPLACE_WITH_REVIEWED_DATABASE_NAME",
+      "database_id": "REPLACE_WITH_DATABASE_UUID",
+      "migrations_dir": "migrations",
+    },
+  ],
+  "vars": {
+    "APP_MODE": "production",
+    "SUBMISSIONS_ENABLED": "false",
+    "POLICIES_APPROVED": "true",
+    "TURNSTILE_SITE_KEY": "REPLACE_WITH_PRODUCTION_SITE_KEY",
+    "ALLOWED_HOSTNAMES": "onlineinvites.in,www.onlineinvites.in",
+  },
+  // Configure TURNSTILE_SECRET_KEY and a random RATE_LIMIT_SALT (32+ characters) using Cloudflare secrets.
+  // Do not deploy until the owner approves hosting/launch and production configuration is verified.
+}

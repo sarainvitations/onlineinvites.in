@@ -1,0 +1,6 @@
+# Server-secret placeholders for future owner-approved configuration.
+# Default local testing needs no .dev.vars file; copying placeholders would disable local verification.
+# The default wrangler.jsonc already supplies official public dummy keys and a local-only salt.
+# Real values must never be committed. Production secrets are configured with Cloudflare, not VITE_ variables.
+TURNSTILE_SECRET_KEY=REPLACE_WITH_SERVER_SECRET
+RATE_LIMIT_SALT=REPLACE_WITH_RANDOM_32_OR_MORE_CHARACTERS

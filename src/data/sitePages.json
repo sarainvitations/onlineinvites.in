@@ -1,0 +1,62 @@
+[
+  {
+    "path": "/",
+    "title": "Beautiful Invitations for Every Celebration",
+    "description": "Beautiful, personalized digital invitations for weddings, Nikah, birthdays and every celebration. Explore all invitation cards, starting at ₹499.",
+    "index": true
+  },
+  {
+    "path": "/designs",
+    "title": "Invitation designs",
+    "description": "Explore all digital invitation cards. Browse wedding, Nikah, birthday and housewarming demos and request a personalized quotation.",
+    "index": true
+  },
+  {
+    "path": "/our-works",
+    "title": "Our works",
+    "description": "Explore live digital invitations created by Online Invites and experience the details for yourself.",
+    "index": true
+  },
+  {
+    "path": "/pricing",
+    "title": "Pricing & hosting",
+    "description": "Digital invitation packages start at ₹499. Compare Basic, Premium and Custom designs, hosting terms and individually quoted domain options.",
+    "index": true
+  },
+  {
+    "path": "/request-quote",
+    "title": "Request a free quote",
+    "description": "Tell Online Invites about your celebration, design preferences and hosting needs to request a personalized quotation. No payment is collected here.",
+    "index": false
+  },
+  {
+    "path": "/contact",
+    "title": "Contact Online Invites",
+    "description": "Contact information and availability for Online Invites in Delhi, including invitation quotations, hosting and privacy requests.",
+    "index": true
+  },
+  {
+    "path": "/policies/privacy",
+    "title": "Privacy policy",
+    "description": "How Online Invites handles quotation details, contact information, security verification and privacy requests.",
+    "index": true
+  },
+  {
+    "path": "/policies/terms",
+    "title": "Terms & conditions",
+    "description": "Online Invites terms covering quotations, payment, delivery, revisions, customer content and custom domains.",
+    "index": true
+  },
+  {
+    "path": "/policies/refunds",
+    "title": "Refund & cancellation policy",
+    "description": "Online Invites refund and cancellation policy for custom invitation services, hosting and third-party domain costs.",
+    "index": true
+  },
+  {
+    "path": "/policies/hosting",
+    "title": "Hosting & expiration policy",
+    "description": "Online Invites hosting policy covering included days, extensions, expiration, custom domains and renewal responsibilities.",
+    "index": true
+  }
+]
