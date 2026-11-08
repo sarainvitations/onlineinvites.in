@@ -18,5 +18,17 @@
     "POLICIES_APPROVED": "true",
     "TURNSTILE_SITE_KEY": "0x4AAAAAAF39az-T1rpEe2hS",
     "ALLOWED_HOSTNAMES": "onlineinvites.in,www.onlineinvites.in,online-invites.pages.dev"
+  },
+  "env": {
+    "preview": {
+      "vars": {
+        "APP_MODE": "preview",
+        "SUBMISSIONS_ENABLED": "false",
+        "POLICIES_APPROVED": "true",
+        "TURNSTILE_SITE_KEY": "",
+        "ALLOWED_HOSTNAMES": ""
+      },
+      "d1_databases": []
+    }
   }
 }

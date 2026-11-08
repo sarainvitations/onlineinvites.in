@@ -7,7 +7,7 @@ const value = (flag) => {
 };
 const reference = value("--reference");
 const remote = args.includes("--remote");
-const config = value("--config") ?? "wrangler.jsonc";
+const config = value("--config") ?? "wrangler.local.jsonc";
 if (remote && !value("--config"))
   throw new Error(
     "Remote retrieval requires an explicit reviewed production --config.",
