@@ -28,3 +28,5 @@ In Workers & Pages → online-invites → Settings → Build, configure:
 Push the reviewed configuration changes to GitHub `main`, save the corrected Cloudflare build settings, then retry the deployment. Verify a successful production build before expecting `https://online-invites.pages.dev/` to serve the website. Connecting a repository or pushing a commit alone does not establish a successful deployment.
 
 The configuration change is prepared locally. No Git commit/push, remote build-setting update, deployment retry or submission enablement was performed by this fix.
+
+Latest validation fix: the next GitHub deployment reached configuration validation and rejected `account_id`. Cloudflare Pages does not support this field in Wrangler configuration. It has been removed from both production configuration entrypoints, and `scripts/prepare-release.mjs` now validates the project/database/site key without requiring it. Verified with `wrangler pages functions build` using `--project-directory` and `--build-metadata-path`, which invokes the Pages-specific configuration validator. The root configuration correction must be pushed before retrying the failed build.

@@ -35,9 +35,9 @@ Desktop LCP: 0.3 s, TBT: 0 ms, CLS: 0.002. Mobile LCP: 1.1 s, TBT: 120 ms, CLS: 
 
 ## Reviewable release
 
-Current staged directory: `artifacts/online-invites-release-mziylv/`.
-Archive: `artifacts/online-invites-release-mziylv.tar.gz`.
-Manifest: `artifacts/online-invites-release-mziylv/release-manifest.json`.
+Current staged directory: `artifacts/online-invites-release-0XW3FR/`.
+Archive: `artifacts/online-invites-release-0XW3FR.tar.gz`.
+Manifest: `artifacts/online-invites-release-0XW3FR/release-manifest.json`.
 
 To prepare a fresh staging directory after future changes, run a successful `npm run build`, then `node scripts/prepare-release.mjs`. It creates a new directory and does not deploy. Do not deploy from the root local-test Wrangler configuration. The staging directory has a production `wrangler.jsonc`, `dist/`, `functions/`, all referenced source modules and migrations. Before deploying, confirm the existing Pages project’s production branch; use the staged project as Wrangler’s working directory.
 
@@ -56,3 +56,5 @@ Customer domain provisioning, hosting expiry and retention/deletion procedures r
 ## Evidence
 
 Ignored artifacts: `artifacts/phase5-refresh-2026-11-08/`, containing accessibility scan data, Lighthouse desktop/mobile reports, HTTP checks, audit script and compiled Functions. Earlier reports remain historical evidence rather than current production claims.
+
+Release configuration was subsequently corrected for GitHub/Pages: the unsupported `account_id` field was removed, and Pages-specific configuration validation plus Functions compilation now pass. The previous staged release is superseded by the current path above.

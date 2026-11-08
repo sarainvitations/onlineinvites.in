@@ -15,6 +15,7 @@ import Home from "./pages/Home";
 import "./styles.css";
 import "./phase2.css";
 import "./premium-covers.css";
+const DiwaliInvitation = lazy(() => import("./pages/DiwaliInvitation"));
 const OurWorks = lazy(() => import("./pages/OurWorks"));
 const Gallery = lazy(() => import("./pages/Gallery"));
 const TemplatePreview = lazy(() => import("./pages/TemplatePreview"));
@@ -62,7 +63,7 @@ function PendingPage() {
 }
 function App() {
   const { pathname } = useLocation();
-  const preview = /^\/designs\/[^/]+$/.test(pathname);
+  const preview = /^\/invite\/varun-priyanka-diwali\/?$/.test(pathname) || /^\/designs\/[^/]+$/.test(pathname);
   return (
     <>
       <a className="skip-link" href="#main-content">
@@ -86,6 +87,7 @@ function App() {
           <Route path="/designs" element={<Gallery />} />
           <Route path="/our-works" element={<OurWorks />} />
           <Route path="/designs/:id" element={<TemplatePreview />} />
+          <Route path="/invite/varun-priyanka-diwali" element={<DiwaliInvitation />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/request-quote" element={<Quote />} />
           <Route path="/contact" element={<Contact />} />

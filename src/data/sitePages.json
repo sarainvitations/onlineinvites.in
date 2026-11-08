@@ -58,5 +58,15 @@
     "title": "Hosting & expiration policy",
     "description": "Online Invites hosting policy covering included days, extensions, expiration, custom domains and renewal responsibilities.",
     "index": true
+  },
+  {
+    "path": "/invite/varun-priyanka-diwali",
+    "title": "Diwali with Varun & Priyanka",
+    "description": "An evening of light & togetherness. Join Varun and Priyanka at their Niwas, UER Heights, H-Tower, from 7 PM onwards.",
+    "index": false,
+    "image": "/invitations/varun-priyanka-diwali.png",
+    "imageWidth": 1024,
+    "imageHeight": 1536,
+    "imageAlt": "Varun and Priyanka’s Diwali invitation with glowing diyas and candles"
   }
 ]

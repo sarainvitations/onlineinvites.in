@@ -7,8 +7,8 @@ const config = JSON.parse(await fs.readFile('cloudflare/production/wrangler.json
 if (config.vars.APP_MODE !== 'production' || config.vars.SUBMISSIONS_ENABLED !== 'false' || config.vars.POLICIES_APPROVED !== 'true') {
   throw new Error('Release preparation requires production mode, approved policies and disabled submissions.');
 }
-if (!config.account_id || !config.d1_databases?.[0]?.database_id || /^[123]x0{10,}/.test(config.vars.TURNSTILE_SITE_KEY)) {
-  throw new Error('Reviewed production account, database and real Turnstile site key are required.');
+if (config.name !== "online-invites" || !config.d1_databases?.[0]?.database_id || config.d1_databases[0].database_id === "00000000-0000-0000-0000-000000000000" || /^[123]x0{10,}/.test(config.vars.TURNSTILE_SITE_KEY)) {
+  throw new Error('Reviewed production project, database and real Turnstile site key are required.');
 }
 await fs.access('dist/_headers');
 await fs.access('dist/index.html');
