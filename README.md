@@ -1,5 +1,8 @@
 # Online Invites
 
+Current release status: Phase 5 preparation was refreshed on 8 November 2026 after the latest design changes. Build and 212 regression checks pass; 92 accessibility scans report zero WCAG-tagged violations. Policies are approved, and a verified production release is staged with submissions disabled. Deployment, DNS and live acceptance testing remain pending. See [current Phase 5 review](docs/PHASE5_CURRENT_REVIEW.md). Older progress sections below are historical.
+
+
 A premium, quotation-first digital invitation studio. Phases 1–4 and Phase 5 local launch preparation (steps 1–5) are implemented, with individual demo animation refinements deferred for later updates. The full local Cloudflare runtime can store test enquiries; permanent hosting and launch have not been performed. See [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md) for progress and approval boundaries.
 
 ## Start locally

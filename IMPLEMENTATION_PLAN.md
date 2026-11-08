@@ -248,3 +248,7 @@ Owner chose launch preparation now and ongoing individual demo refinements later
 
 ## Production service configuration — 8 November 2026
 Owner authorized production provisioning. Completed D1 database, enquiry/RSVP migrations, real managed Turnstile widget and encrypted server secrets on Pages project `online-invites`. Remote verification passed; no pending migrations and both tables empty. See `docs/PRODUCTION_SERVICES.md`. Production submissions remain disabled pending policy approval; deployment, DNS and live verification remain pending.
+
+## Phase 5 continuation completed — 8 November 2026
+
+Current production build, 212 regression checks and 92 WCAG-tagged accessibility scans pass. Fixed collection badge and dark Basic RSVP contrast. Lighthouse desktop scores 100/100/100/100; mobile 99/100/100/100. Dependency audit has no known advisories. Production migration status verified read-only with no pending migrations. Local release configuration records approved policies and keeps submissions disabled. Prepared and verified a production staging directory/archive and compiled Pages Functions; added reusable allowlist-based release preparation script. Public deployment, DNS and live acceptance remain separate launch steps. Details: `docs/PHASE5_CURRENT_REVIEW.md`.
